@@ -1,0 +1,58 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+.App {
+  background-color: #F0EBE3;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  color: #2C3639;
+}
+
+header {
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+header .menu-list {
+  padding: 0px;
+  display: flex;
+  align-items: center;
+}
+header .menu-list li {
+  list-style: none;
+  margin: 0 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+header .menu-list li:hover {
+  transform: scale(1.2) rotate(2deg);
+}
+header .logo-fullCap {
+  width: 100px;
+}
+header .cart {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  text-align: end;
+  width: 230px;
+  fill: #2C3639;
+  display: flex;
+  justify-content: end;
+  transition: all 0.2s;
+}
+header .cart:hover {
+  transform: translateX(-10px);
+}
+header .cart svg {
+  cursor: pointer;
+}
+header .cart svg path {
+  pointer-events: none;
+}
+header .cart .productsNum {
+  margin-left: 10px;
+}/*# sourceMappingURL=style.css.map */
