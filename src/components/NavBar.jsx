@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
 import Logo from '../img/logo.svg'
-import CardWidget from './CardWidget';
 import ItemListContainer from './ItemListContainer';
+import CardWidget from './CardWidget'
 
 
 const NavBar = () => {
@@ -13,11 +12,13 @@ const NavBar = () => {
         <li><a>Shop</a></li>
         <li><a>Nosotros</a></li>
       </ul>
+      
       <img src={Logo} className="logo-fullCap"/>
+
       <div className="cart">
         <div>
           <CardWidget/>
-          <ItemListContainer />
+          <ItemListContainer productsNum={0}/>
         </div>
       </div>
     </header>
