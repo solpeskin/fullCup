@@ -1,12 +1,12 @@
 * {
   padding: 0px;
   margin: 0px;
+  font-family: "Poppins", sans-serif;
 }
 
 .App {
   background-color: #F0EBE3;
   height: 100vh;
-  font-family: "Poppins", sans-serif;
   color: #2C3639;
 }
 
@@ -26,9 +26,23 @@ header .menu-list li {
   margin: 0 20px;
   cursor: pointer;
   transition: all 0.2s;
+  color: #2C3639;
+  position: relative;
 }
-header .menu-list li:hover {
-  transform: scale(1.2) rotate(2deg);
+header .menu-list li::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: rgba(31, 31, 31, 0.406);
+  left: 0px;
+  bottom: 0px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: all 0.2s ease;
+}
+header .menu-list li:hover::after {
+  transform: scaleX(1);
 }
 header .logo-fullCap {
   width: 100px;
@@ -37,22 +51,86 @@ header .cart {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
-  text-align: end;
   width: 230px;
-  fill: #2C3639;
+  display: flex;
+  justify-content: end;
+}
+header .cart div {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
   display: flex;
   justify-content: end;
   transition: all 0.2s;
 }
-header .cart:hover {
+header .cart div:hover {
   transform: translateX(-10px);
 }
-header .cart svg {
+header .cart div svg {
+  fill: #2C3639;
   cursor: pointer;
 }
-header .cart svg path {
+header .cart div svg path {
   pointer-events: none;
 }
-header .cart .productsNum {
+header .cart div .productsNum {
+  transition: all 0.2s;
   margin-left: 10px;
+}
+
+.products {
+  margin: 50px;
+  display: flex;
+}
+.products .itemCount {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  background-color: #2C3639;
+  border-radius: 5px;
+  align-items: center;
+  transition: all 0.4s ease;
+  margin: 10px;
+  width: 200px;
+  height: 150px;
+}
+.products .itemCount:hover {
+  transform: scale(1.1) translateY(-10px);
+  box-shadow: 0px 0px 10px rgba(50, 57, 57, 0.3921568627);
+}
+.products .itemCount .selectAmount {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 180px;
+  border: 1px solid white;
+  color: white;
+  margin: 20px 0;
+}
+.products .itemCount .selectAmount button {
+  cursor: pointer;
+  width: 40px;
+  border: none;
+  background: none;
+  color: white;
+}
+.products .itemCount .selectAmount button:hover p {
+  text-shadow: 0px 0px 5px white;
+}
+.products .itemCount .addButton {
+  cursor: pointer;
+  border: none;
+  background-color: #a28b63;
+  width: 180px;
+  height: 40px;
+  color: white;
+  transition: all 0.1s ease;
+}
+.products .itemCount .addButton:hover {
+  filter: brightness(1.2);
+}
+.products .itemCount .stockAvailable {
+  color: white;
+  margin-top: 5px;
+  font-size: 10px;
 }/*# sourceMappingURL=style.css.map */

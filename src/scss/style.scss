@@ -1,13 +1,14 @@
 *{
     padding: 0px;
     margin: 0px;
+    font-family: 'Poppins', sans-serif;
   }
   
   .App {
     background-color: #F0EBE3;
     height: 100vh;
-    font-family: 'Poppins', sans-serif;
     color: #2C3639;
 }
 
-@import "../components/NavBar/NavBar";
+@import "./components/NavBar";
+@import "./components/Products";

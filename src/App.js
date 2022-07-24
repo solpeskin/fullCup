@@ -1,10 +1,12 @@
 import './scss/style.css';
-import NavBar from './components/NavBar/NavBar.js'; 
+import NavBar from './components/NavBar'; 
+import Products from './components/Products';
 
 function App() {
   return (
     <div className="App">
       <NavBar/>
+      <Products/>
     </div>
   );
 }
