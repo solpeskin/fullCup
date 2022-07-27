@@ -1,0 +1,67 @@
+.cupLoader-bckg {
+    z-index: 6;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 100vw;
+    background-color: #252525;
+}
+
+.cupLoader {
+    height: 100px;
+    width: 140px;
+    border: 6px solid #252525;
+    position: fixed;
+    top: 50%;
+    left: 45%;
+    border-radius: 5px 5px 70px 70px;
+    background: url(../img/liquid.png);
+    background-repeat: repeat-x;
+    background-position: 0px 140px;
+    animation: fill 2.5s infinite;
+    box-shadow: 0px 0px 0px 6px white;
+    
+    transition: all 0.3s ease;
+}
+
+@keyframes fill {
+    0%{
+        background-position: 0px 140px;
+    }
+
+    20%{
+        background-position: -450px 100px;
+    }
+
+    40%{
+        background-position: -900px 50px;
+    }
+
+    80% {
+        background-position: -1350px -40px;
+    }
+
+    100%{
+        background-position: 0px 140px;
+    }
+}
+
+.handle {
+    height: 40px;
+    width: 30px;
+    background-color: transparent;
+    border: 6px solid white;
+    position: relative;
+    left: 147px;
+    top: 0px;
+    border-radius: 0px 25px 80px 0px;
+}
+
+.loadingText {
+    color: white;
+    position: relative;
+    top: 60px;
+    text-align: center;
+    left: 3px;
+}

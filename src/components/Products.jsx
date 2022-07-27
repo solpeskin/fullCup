@@ -1,18 +1,14 @@
 import React from 'react'
-import ItemCount from './ItemCount'
+import ItemListContainer from './Items/ItemListContainer'
 
-const products = () => {
-    const onAdd = (amount)=>{
-        console.log(`agregaste ${amount} productos`)
-    }
+const Products = () => {
+
 
     return (
-        <div className='products'>
-            <ItemCount stock={15} initial={0} onAdd={onAdd}/>
-            <ItemCount stock={7} initial={0} onAdd={onAdd}/>
-            <ItemCount stock={10} initial={0} onAdd={onAdd}/>
-        </div>
+        <section id='products'>
+            <ItemListContainer/>
+        </section>
     )
 }
 
-export default products
+export default Products

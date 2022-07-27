@@ -1,14 +1,45 @@
-*{
-    padding: 0px;
-    margin: 0px;
-    font-family: 'Poppins', sans-serif;
-  }
-  
-  .App {
-    background-color: #F0EBE3;
-    height: 100vh;
-    color: #2C3639;
+// variables 
+@font-face {
+  font-family: cerlions ;
+  src: url("../font/Cerlions-Regular.otf");
 }
+
+@font-face {
+  font-family: signature ;
+  src: url("../font/Signature\ Moments.ttf");
+}
+
+$gris: #2C3639;
+$beige: rgb(220, 215, 201);
+
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+  
+.App {
+  transition: all 0.5s;
+  background-color: $beige;
+  color: $gris;
+}
+
+.turn-black {
+  transition: all 0.5s;
+  background-color: #181818
+}
+
 
 @import "./components/NavBar";
 @import "./components/Products";
+@import "./components/HomePage";
+@import "./components/Introduction";
+@import "./components/loading";
+@import "./components/ItemCount";
+
+

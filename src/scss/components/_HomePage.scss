@@ -1,0 +1,86 @@
+@mixin imgPosition ($width, $top, $left ) {
+    width: $width ;
+    top: $top;
+    left: $left;
+}
+
+
+#homePage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    .background {
+        margin-top: 0px;
+        position: absolute;
+        top: 0px;
+        filter: blur(2px);
+        width: 100%;
+    }
+
+    img {
+        position: absolute;
+        width: 200px;
+        z-index: 1;
+    }
+
+    .coffe1 {
+        @include imgPosition(200px, 0px,0px);
+    }
+    
+    .coffe2 {
+        @include imgPosition(200px, 20px,80%);
+    }
+    
+    .coffe3 {
+        @include imgPosition(200px, 40%,80%);
+    }
+    
+    .coffe4 {
+        @include imgPosition(400px, 55%, 20%);
+    }
+    
+    .coffe5 {
+        @include imgPosition(240px, 70%, -85px);
+        transform: rotate(90deg);
+    }
+    
+    .coffe6 {
+        @include imgPosition(320px, -50px, 50%);
+        transform: rotate(90deg);
+        filter: blur(1px);
+    }
+    
+    .coffe7 {
+        @include imgPosition(320px, 20%, 5%);
+        transform: rotate(90deg);
+        filter: blur(1px);
+    }
+    
+    .coffe8 {
+       @include imgPosition(320px, 85%, 70%);
+        transform: rotate(90deg);
+    }
+
+    div {
+        margin-top: 20px;
+
+        h1 {
+            text-align: center;
+            font-size: 150px;
+            color: #ffffff;
+            font-family: poppins, sans-serif;
+    
+        }
+
+        p {
+            text-align: end;
+            font-family: signature, sans-serif;
+            color: white;
+            font-size: 30px;
+            margin: -100px 0 0 20px;
+        }
+    }
+
+}

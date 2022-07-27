@@ -1,4 +1,8 @@
 header {
+    z-index: 4;
+    position: sticky;
+    top: 0px;
+    backdrop-filter: blur(2px);
     display: flex;
     padding: 20px;
     justify-content: space-between;
@@ -14,15 +18,19 @@ header {
             margin: 0 20px;
             cursor: pointer;
             transition: all 0.2s;
-            color: #2C3639 ;
             position: relative;
+            
+            a {
+                color: white;
+                text-decoration: none;
+            }
 
             &::after{
                 content: "";
                 position: absolute;
                 width: 100%;
-                height: 2px;
-                background-color: rgba(31, 31, 31, 0.406);
+                height: 1px;
+                background-color: white;
                 left: 0px;
                 bottom: 0px;
     
@@ -37,44 +45,31 @@ header {
         }
     }
 
-    .logo-fullCap{
-        width: 100px;       
-    }
-
-    .cart {
-        height: max-content;
-        width: 230px;
+    #cart {
+        width: max-content;
         display: flex;
         justify-content: end;
+        transition: all 0.2s;
 
-        div {
-            width: max-content;
-            display: flex;
-            justify-content: end;
-            transition: all 0.2s;
+        &:hover{
+            transform: translateX(-10px) ;
             
-            &:hover{
-                transform: translateX(-10px) ;
-                
-            }
-
-            svg{
-                fill: #2C3639;
-    
-    
-                cursor: pointer;
-    
-                path {
-                    pointer-events: none;
-                }
-            }
-    
-            .productsNum{
-                transition: all 0.2s;
-                margin-left: 10px;
-            }
         }
 
+        svg{
+            fill: white;
+            cursor: pointer;
+
+            path {
+                pointer-events: none;
+            }
+        }
+        
+        .productsNum{
+            color: white;
+            transition: all 0.2s;
+            margin-left: 10px;
+        }
     }
     
 }

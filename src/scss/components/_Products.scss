@@ -1,68 +1,116 @@
-.products {
-    margin: 50px;
+#products {
+    padding-top: 50px;
     display: flex;
 
-    .itemCount {
+    .itemList {
         display: flex;
-        flex-direction: column;
-        justify-content: start;
-        background-color: #2C3639;
-        border-radius: 5px;
-        align-items: center;
-        transition: all 0.4s ease;
+        flex-wrap: wrap;
+        justify-content: center;
 
-        margin: 10px;
-        width: 200px;
-        height: 150px;
-
-        &:hover {
-            transform: scale(1.1) translateY(-10px);
-            box-shadow: 0px 0px 10px #32393964;
-        }
-
-        .selectAmount {
+        .itemContainer {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            width: 180px;
-            // background-color: white;
-            border: 1px solid white;
-            color: white;
+            position: relative;
+            margin: 50px;
 
-            margin: 20px 0;
+            .card-onHover {                
+                &::before{
+                    clip-path: circle(400px at 80% -20%) !important;
+                }
 
-            button {
-                cursor: pointer;
-                width: 40px;
-                border: none;
-                background: none;
-                // color: #2C3639 ;
-                color: white;
+                .imgBx{
+                    // top: 40% !important;
+                    margin-left: 20%;
+                    transform: translateY(0%) translateX(40%) scale(0.9) !important;
+                }
 
-                &:hover p{
-                    text-shadow: 0px 0px 5px white;
+                .contentBx{
+                    opacity: 100% !important;
+                }
+
+                .itemCount {
+                    display: flex !important;
+                }
+            }
+
+            .card {
+                transition: all 0.5s ease;
+                position: relative;
+                width: 320px;
+                height: 450px;
+                background-color: #94949454;
+                // overflow: hidden;
+                border-radius: 20px;
+
+                &:hover{
+                    transform: translateY(-10px);
+
+                }
+
+                &::before{
+                    z-index: 1;
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: #5c3208;
+                    // background-color: attr(data-color);
+                    clip-path: circle(150px at 80% 20%);
+                    border-radius: 20px;
+
+                    transition: all 0.5s ease-in-out;
+                }
+
+                .imgBx {
+                    pointer-events: none;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    z-index: 3;
+                    width: 100%;
+                    height: 220px;
+                    transition: all 0.5s ease;
+
+                    img {
+                        max-height: 300px;
+                        position: relative;
+                        left: -40px;
+                        max-width: 250px;
+                        filter: drop-shadow(30px 20px 10px rgba(33, 33, 33, 0.315));
+                    }
+                }
+
+                .contentBx{
+                    pointer-events: none;
+                    transition: all 0.5s ease;
+                    z-index: 3;
+                    position: relative;
+                    text-align: center;
+                    padding: 10px;
+                    color: white;
+                    opacity: 0%;
+                    top: 10px;
+
+                    h2 {
+                        font-size: 30px;
+                    }
+
+                    .price {
+                        margin-top: 10px;
+                        font-weight: bold;
+                    }
+                }
+
+                .itemCount {
+                    display: none;
+                    position: absolute;
+                    bottom: 7%;
+                    left: 10%;
                 }
             }
         }
-
-       .addButton {
-            cursor: pointer;
-            border: none;
-            background-color: #a28b63;
-            width: 180px;
-            height: 40px;
-            color: white;   
-            transition: all 0.1s ease;
-            
-            &:hover {
-                filter: brightness(1.2);
-            }
-        }
-
-        .stockAvailable {
-            color: white;
-            margin-top: 5px;
-            font-size: 10px;
-        }
     }
+
 }
