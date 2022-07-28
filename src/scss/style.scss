@@ -23,7 +23,7 @@ body {
   overflow-x: hidden;
 }
   
-.App {
+.home {
   transition: all 0.5s;
   background-color: $beige;
   color: $gris;
@@ -41,5 +41,7 @@ body {
 @import "./components/Introduction";
 @import "./components/loading";
 @import "./components/ItemCount";
+@import "./components/FeaturedProducts";
+
 
 

@@ -1,4 +1,4 @@
-import ItemCount from '../Items/ItemCount'
+import { Link } from 'react-router-dom'
 import CardWidget from './CardWidget'
 
 const NavBar = () => {
@@ -6,8 +6,8 @@ const NavBar = () => {
   return (
     <header>
       <ul className='menu-list'>
-        <li><a href='#homePage'>Inicio</a></li>
-        <li><a href='#products'>Shop</a></li>
+        <li><Link to='/'>Inicio</Link></li>
+        <li><Link to='/products'>Productos</Link></li>
         <li><a>Nosotros</a></li>
       </ul>
       

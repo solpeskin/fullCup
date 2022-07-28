@@ -1,12 +1,12 @@
 header {
-    z-index: 4;
-    position: sticky;
-    top: 0px;
-    backdrop-filter: blur(2px);
     display: flex;
-    padding: 20px;
-    justify-content: space-between;
     align-items: center;
+    padding: 20px;
+    backdrop-filter: blur(2px);
+    position: fixed;
+    width: 97%;
+    z-index: 4;
+    top: 0px;
 
     .menu-list {
         padding: 0px;
@@ -21,7 +21,7 @@ header {
             position: relative;
             
             a {
-                color: white;
+                color:white;
                 text-decoration: none;
             }
 
@@ -30,7 +30,7 @@ header {
                 position: absolute;
                 width: 100%;
                 height: 1px;
-                background-color: white;
+                background-color:white;
                 left: 0px;
                 bottom: 0px;
     
@@ -46,18 +46,17 @@ header {
     }
 
     #cart {
+        margin-left: auto;
         width: max-content;
         display: flex;
-        justify-content: end;
         transition: all 0.2s;
 
         &:hover{
             transform: translateX(-10px) ;
-            
         }
 
         svg{
-            fill: white;
+            fill:white;
             cursor: pointer;
 
             path {
@@ -66,7 +65,7 @@ header {
         }
         
         .productsNum{
-            color: white;
+            color:white;
             transition: all 0.2s;
             margin-left: 10px;
         }

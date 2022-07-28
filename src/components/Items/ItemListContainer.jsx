@@ -3,6 +3,7 @@ import ItemList from './ItemList'
 
 import { toast } from 'react-toastify';
 import { data } from '../../mock/DataProducts';
+import LoadingSymbol from '../LoadingSymbol';
 
 const ItemListContainer = () => {
   const notify = (msg)=>{
@@ -19,8 +20,7 @@ const ItemListContainer = () => {
     
   const [productsArray, setProductsArray] = useState([])
   const [loading, setLoading] = useState(true)
-  const loadingSymbol = <div className='cupLoader-bckg'><div className="cupLoader"> <div className='handle'></div> <div className='loadingText'>LOADING...</div> </div></div> 
-
+  const loadingSymbol = <LoadingSymbol/>
   // cada vez que renderiza 
   useEffect(()=>{
     data
@@ -32,7 +32,7 @@ const ItemListContainer = () => {
   }, [])
 
   return (
-    <div>
+    <div className='itemListContainer'>
       { loading ? loadingSymbol : <ItemList items={productsArray}/>}
     </div>
   )
