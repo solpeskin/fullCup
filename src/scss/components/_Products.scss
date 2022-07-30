@@ -8,6 +8,10 @@
         flex-wrap: wrap;
         justify-content: center;
 
+        a {
+            text-decoration: none;
+        }
+
         .itemContainer {
             display: flex;
             align-items: center;

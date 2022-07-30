@@ -104,6 +104,9 @@ header #cart .productsNum {
   flex-wrap: wrap;
   justify-content: center;
 }
+#products .itemList a {
+  text-decoration: none;
+}
 #products .itemList .itemContainer {
   display: flex;
   align-items: center;

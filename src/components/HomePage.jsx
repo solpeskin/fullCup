@@ -48,7 +48,7 @@ const HomePage = () => {
       let x = (e.clientX * movingValue) / 250
       let y = (e.clientY * movingValue) /250
 
-      if (move == document.querySelector(".coffe5") || move == document.querySelector(".coffe6") || move == document.querySelector(".coffe7") || move == document.querySelector(".coffe8")){
+      if (move === document.querySelector(".coffe5") || move === document.querySelector(".coffe6") || move === document.querySelector(".coffe7") || move === document.querySelector(".coffe8")){
         move.style.transform = `translateX(${x}px) translateY(${y}px) rotate(90deg)`
       }
 
@@ -58,26 +58,25 @@ const HomePage = () => {
     })
   }
 
-
   return (
     <section className='home'>
 
       <div id='homePage'>
-        <img className='background' src={background}/>
+        <img className='background' src={background} alt="granos de café"/>
         <div>
           <h1>FullCup</h1>
           <p>Hecho a mano</p>
         </div>
 
         <div className='cafeImages'>
-          <img src={coffe1} className="coffe1" data-value="-2"/>
-          <img src={coffe2} className="coffe2" data-value="6"/>
-          <img src={coffe3} className="coffe3" data-value="-6"/>
-          <img src={coffe4} className="coffe4" data-value="8"/>
-          <img src={coffe5} className="coffe5" data-value="-4"/>
-          <img src={coffe3} className="coffe6" data-value="5"/>
-          <img src={coffe4} className="coffe7" data-value="-9"/>
-          <img src={coffe2} className="coffe8" data-value="-5"/>
+          <img src={coffe1} className="coffe1" data-value="-2" alt='grano de café'/>
+          <img src={coffe2} className="coffe2" data-value="6" alt='grano de café'/>
+          <img src={coffe3} className="coffe3" data-value="-6" alt='grano de café'/>
+          <img src={coffe4} className="coffe4" data-value="8" alt='grano de café'/>
+          <img src={coffe5} className="coffe5" data-value="-4" alt='grano de café'/>
+          <img src={coffe3} className="coffe6" data-value="5" alt='grano de café'/>
+          <img src={coffe4} className="coffe7" data-value="-9" alt='grano de café'/>
+          <img src={coffe2} className="coffe8" data-value="-5" alt='grano de café'/>
         </div>
       </div>
 
@@ -87,7 +86,7 @@ const HomePage = () => {
         <h2 className='contorn-text'>que un café amargo </h2>
       </div>
 
-      <FeaturedProducts/>
+      <FeaturedProducts />
     </section>
   )
 }

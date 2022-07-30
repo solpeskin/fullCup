@@ -2,7 +2,7 @@ import React, { useEffect, useState }  from 'react'
 import ItemList from './ItemList'
 
 import { toast } from 'react-toastify';
-import { data } from '../../mock/DataProducts';
+import { data } from '../../services/DataProducts';
 import LoadingSymbol from '../LoadingSymbol';
 
 const ItemListContainer = () => {
@@ -20,8 +20,10 @@ const ItemListContainer = () => {
     
   const [productsArray, setProductsArray] = useState([])
   const [loading, setLoading] = useState(true)
+  const [category, setCategory] = useState("")
+
   const loadingSymbol = <LoadingSymbol/>
-  // cada vez que renderiza 
+  
   useEffect(()=>{
     data
     .then((res)=>setProductsArray(res)) // guardo los productos 
@@ -29,7 +31,22 @@ const ItemListContainer = () => {
       notify(err)
     })
     .finally(()=> setLoading(false))
-  }, [])
+  }, [category])  // cada vez que cambia la categoría
+
+  // useEffect(()=>{
+  //   fetch("../public/JSON/DataList.json")
+  //   .then((res)=>{
+  //     console.log(res)
+  //     res.json()
+  //   })
+  //   .then((res)=>{
+  //     console.log(res)
+  //   })
+
+  //   .catch((err)=>{notify(err)})
+  //   .finally(()=> setLoading(false))
+  // }, [category])
+  
 
   return (
     <div className='itemListContainer'>
