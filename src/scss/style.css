@@ -13,6 +13,10 @@
   scroll-behavior: smooth;
 }
 
+:root {
+  --color-dark: #333;
+}
+
 body {
   overflow-x: hidden;
 }
@@ -96,57 +100,51 @@ header #cart .productsNum {
   margin-left: 10px;
 }
 
-.itemListContainer {
+.products {
   background-color: #181818;
   padding-top: 50px;
-  display: flex;
-  min-height: 110vh;
-  flex-direction: column;
 }
-.itemListContainer .itemList {
+.products .itemListContainer {
+  padding: 50px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  width: 100vw;
 }
-.itemListContainer .itemList a {
+.products .itemList {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 300px 300px 300px 300px;
+  gap: 50px;
+}
+.products .itemList a {
   text-decoration: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: 50px;
 }
-.itemListContainer .itemList .itemContainer {
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-.itemListContainer .itemList .itemContainer .card-onHover::before {
+.products .itemList .itemContainer .card-onHover::before {
   -webkit-clip-path: circle(400px at 80% -20%) !important;
           clip-path: circle(400px at 80% -20%) !important;
 }
-.itemListContainer .itemList .itemContainer .card-onHover .imgBx {
+.products .itemList .itemContainer .card-onHover .imgBx {
   margin-left: 20%;
   transform: translateY(0%) translateX(40%) scale(0.9) !important;
 }
-.itemListContainer .itemList .itemContainer .card-onHover .contentBx {
+.products .itemList .itemContainer .card-onHover .contentBx {
   opacity: 100% !important;
 }
-.itemListContainer .itemList .itemContainer .card-onHover .itemCount {
+.products .itemList .itemContainer .card-onHover .itemCount {
   display: flex !important;
 }
-.itemListContainer .itemList .itemContainer .card {
+.products .itemList .itemContainer .card {
+  overflow: hidden;
   transition: all 0.5s ease;
   position: relative;
-  width: 320px;
+  width: 100%;
   height: 450px;
   background-color: rgba(148, 148, 148, 0.3294117647);
   border-radius: 20px;
 }
-.itemListContainer .itemList .itemContainer .card:hover {
+.products .itemList .itemContainer .card:hover {
   transform: translateY(-10px);
 }
-.itemListContainer .itemList .itemContainer .card::before {
+.products .itemList .itemContainer .card::before {
   z-index: 1;
   content: "";
   position: absolute;
@@ -160,7 +158,7 @@ header #cart .productsNum {
   border-radius: 20px;
   transition: all 0.5s ease-in-out;
 }
-.itemListContainer .itemList .itemContainer .card .imgBx {
+.products .itemList .itemContainer .card .imgBx {
   pointer-events: none;
   position: absolute;
   top: 50%;
@@ -170,14 +168,14 @@ header #cart .productsNum {
   height: 220px;
   transition: all 0.5s ease;
 }
-.itemListContainer .itemList .itemContainer .card .imgBx img {
+.products .itemList .itemContainer .card .imgBx img {
   max-height: 300px;
   position: relative;
   left: -40px;
   max-width: 250px;
   filter: drop-shadow(30px 20px 10px rgba(33, 33, 33, 0.315));
 }
-.itemListContainer .itemList .itemContainer .card .contentBx {
+.products .itemList .itemContainer .card .contentBx {
   pointer-events: none;
   transition: all 0.5s ease;
   z-index: 3;
@@ -188,14 +186,14 @@ header #cart .productsNum {
   opacity: 0%;
   top: 10px;
 }
-.itemListContainer .itemList .itemContainer .card .contentBx h2 {
+.products .itemList .itemContainer .card .contentBx h2 {
   font-size: 30px;
 }
-.itemListContainer .itemList .itemContainer .card .contentBx .price {
+.products .itemList .itemContainer .card .contentBx .price {
   margin-top: 10px;
   font-weight: bold;
 }
-.itemListContainer .itemList .itemContainer .card .itemCount {
+.products .itemList .itemContainer .card .itemCount {
   display: none;
   position: absolute;
   bottom: 7%;

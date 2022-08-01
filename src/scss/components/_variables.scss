@@ -1,0 +1,24 @@
+// variables css
+:root {
+    --color-dark: #333;
+}
+
+// variables scss
+$black: #181818;
+$gris: #2C3639;
+$beige: rgb(220, 215, 201);
+
+body {
+  overflow-x: hidden;
+}
+  
+.home {
+  transition: all 0.5s;
+  background-color: $beige;
+  color: $gris;
+}
+
+.turn-black {
+  transition: all 0.5s;
+  background-color: $black
+}

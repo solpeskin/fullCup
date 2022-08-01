@@ -21,7 +21,7 @@
             border: none;
             transition: all 0.5s ease;
             cursor: pointer;
-            color: #181818;
+            color: $black;
 
             &:hover {
                 background: none;
@@ -52,14 +52,14 @@
 
             &:hover {
                 background-color: white;
-                color: #181818;
+                color: $black;
     
             }
         }
 
         .clicked {
             background-color: white;
-            color: #181818;
+            color: $black;
         }
     }
 }
