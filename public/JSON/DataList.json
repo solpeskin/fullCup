@@ -6,7 +6,7 @@
         "stock": "30", 
         "price":"1000", 
         "img":"/img/products/black-cacao-sin-fondo.png",
-        "category": ["café", "molido"]
+        "category": "café-molido"
     },
 
     {
@@ -16,7 +16,7 @@
         "stock": "15", 
         "price":"150", 
         "img":"/img/products/black-cacao-xxl-sin-fondo.png",
-        "category": ["café", "molido"]
+        "category": "café-molido"
     },
 
     {
@@ -26,7 +26,7 @@
         "stock": "20", 
         "price": "1000", 
         "img":"/img/products/clasic-sin-fondo.png",
-        "category": ["café", "molido"]
+        "category": "café-molido"
     },
 
     {
@@ -36,7 +36,7 @@
         "stock": "30", 
         "price":"800",  
         "img":"/img/products/green-capsula-sin-fondo.png",
-        "category": ["café", "cápsula"]
+        "category": "cápsula"
     },
 
     {

@@ -1,7 +1,6 @@
 import React, { useEffect, useState }  from 'react'
 import ItemList from './ItemList'
 
-import { data } from '../../services/DataProducts';
 import LoadingSymbol from '../LoadingSymbol';
 import { useParams, Link } from 'react-router-dom';
 
@@ -13,22 +12,48 @@ const ItemListContainer = () => {
 
   const loadingSymbol = <LoadingSymbol/>
 
+  useEffect(()=>{
+    fetch("../../JSON/DataList.json")
+    .then((res)=>res.json())
+    .then((products)=>getProducts(products))
+    .finally(()=> setLoading(false))
 
-  const buttonOnclick = (e)=>{
+    setClickedCategory()
+  }, [category])
+
+  const getProducts = (arrayProducts)=>{
+    if (category){
+      const productsFiltered = arrayProducts.filter((product)=>product.category == category)
+      setProductsArray(productsFiltered)
+    }
+
+    else {
+      setProductsArray(arrayProducts)
+    }
+  }
+  
+  // botones de categoría
+  const setClickedCategory = ()=>{
     document.querySelectorAll("button").forEach((button)=>{
       button.classList.remove("clicked")
     })
 
-    e.target.classList.add("clicked")
+    if (document.querySelector(`.${category}`)){
+      document.querySelector(`.${category}`).classList.add("clicked")
+    }
+
+    else {
+      document.querySelector(".todo").classList.add("clicked")
+    }
   }
 
+  // buscador 
   const searchingTerm = (e)=>{
     setSearching(e.target.value)
     filter()
   }
 
   const filter = ()=>{
-
     let searchResult = productsArray.filter((product)=>{
       if (product.name.toLowerCase().indexOf(searching.toLowerCase()) != -1){
         return product
@@ -39,40 +64,6 @@ const ItemListContainer = () => {
     console.log(searchResult)
   }
 
-  const getProducts = ()=>{
-    data
-    .then((res)=>{
-      if (category){
-        const productsFiltered = res.filter((product)=>product.category == category)
-        setProductsArray(productsFiltered)
-      }
-
-      else {
-        setProductsArray(res)
-      }
-    }) // guardo los productos 
-    .finally(()=> setLoading(false))
-  }
-  
-  useEffect(()=>{
-    getProducts()
-  }, [category])  // cada vez que cambia la categoría
-
-
-  // useEffect(()=>{
-  //   fetch("../public/JSON/DataList.json")
-  //   .then((res)=>{
-  //     console.log(res)
-  //     res.json()
-  //   })
-  //   .then((res)=>{
-  //     console.log(res)
-  //   })
-
-  //   .catch((err)=>{notify(err)})
-  //   .finally(()=> setLoading(false))
-  // }, [category])
-  
 
   return (
     <div className="products">
@@ -82,10 +73,10 @@ const ItemListContainer = () => {
           <button >Buscar</button>
         </div>
         <div className="filter">
-          <Link to="/products"><button onClick={buttonOnclick} className="clicked">Todo</button></Link>
-          <Link to="/products/cápsula"><button onClick={buttonOnclick}>Cápsula</button></Link>
-          <Link to="/products/elementos"><button onClick={buttonOnclick}>Elementos</button></Link>
-          <Link to="/products/café-molido"><button onClick={buttonOnclick}>Café molido</button></Link>
+          <Link to="/products"><button className="todo" >Todo</button></Link>
+          <Link to="/products/cápsula"><button className="cápsula">Cápsula</button></Link>
+          <Link to="/products/elementos"><button className="elementos" >Elementos</button></Link>
+          <Link to="/products/café-molido"><button className="café-molido" >Café molido</button></Link>
         </div>
       </div>
 
