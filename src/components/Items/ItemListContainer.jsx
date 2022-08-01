@@ -1,37 +1,34 @@
 import React, { useEffect, useState }  from 'react'
 import ItemList from './ItemList'
 
-import { toast } from 'react-toastify';
 import { data } from '../../services/DataProducts';
 import LoadingSymbol from '../LoadingSymbol';
+import CategoryFilter from './CategoryFilter';
+import { useParams } from 'react-router-dom';
 
-const ItemListContainer = () => {
-  const notify = (msg)=>{
-    toast.error(msg, {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: true,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
-  }
-    
+const ItemListContainer = () => {    
   const [productsArray, setProductsArray] = useState([])
   const [loading, setLoading] = useState(true)
-  const [category, setCategory] = useState("")
+  const {category} = useParams()
 
   const loadingSymbol = <LoadingSymbol/>
   
   useEffect(()=>{
     data
-    .then((res)=>setProductsArray(res)) // guardo los productos 
-    .catch((err)=>{
-      notify(err)
-    })
+    .then((res)=>{
+      if (category){
+        const productsFiltered = res.filter((product)=>product.category == category)
+        setProductsArray(productsFiltered)
+      }
+
+      else {
+        setProductsArray(res)
+      }
+    }) // guardo los productos 
     .finally(()=> setLoading(false))
+
   }, [category])  // cada vez que cambia la categoría
+
 
   // useEffect(()=>{
   //   fetch("../public/JSON/DataList.json")
@@ -50,6 +47,7 @@ const ItemListContainer = () => {
 
   return (
     <div className='itemListContainer'>
+      <CategoryFilter/>
       { loading ? loadingSymbol : <ItemList items={productsArray}/>}
     </div>
   )

@@ -8,7 +8,7 @@ const NavBar = () => {
       <ul className='menu-list'>
         <li><Link to='/'>Inicio</Link></li>
         <li><Link to='/products'>Productos</Link></li>
-        <li><a>Nosotros</a></li>
+        <li>Nosotros</li>
       </ul>
       
       <CardWidget productsNum="0"/>

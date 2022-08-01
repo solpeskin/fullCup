@@ -15,24 +15,22 @@ const ItemDetailContainer = () => {
 
     
     // fetch - then
+    // const getProductFetch = (id)=>{
+    //     fetch("../../../public/JSON/DataList.json")
+    //     .then((res)=>{
+    //         console.log(res)
+    //         res.json()
+    //     })
+    //     .then((res)=> {
+    //         // setItem(res.filter((product)=>product.id == id))
+    //         console.log(res)
+    //     })
 
-    const getProductFetch = (id)=>{
-        fetch("../public/JSON/DataList.json")
-        .then((res)=>{
-            console.log(res)
-            res.json()
-        })
-        .then((res)=> {
-            // setItem(res.filter((product)=>product.id == id))
-            console.log(res)
-        })
-
-        // .finally(()=> setLoading(true))
-    }
+    //     // .finally(()=> setLoading(true))
+    // }
 
 
     // manual 
-
     const getProductManual = (id)=>{
         data
         .then((array)=>setItem(array.filter((product)=>product.id == id))) // guardo los productos 
@@ -43,11 +41,11 @@ const ItemDetailContainer = () => {
     // cada vez que cambia el id 
     useEffect(() => {
         // getProductManual(id);
-        // getProductFetch(id)
+        getProductManual(id)
     }, [id]);
 
   return (
-    <div>
+    <div className='itemDetailContainer'>
       { loading ? <LoadingSymbol/> : <ItemDetail item={item[0]}/>}
     </div>
   )

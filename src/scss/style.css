@@ -31,13 +31,15 @@ body {
 header {
   display: flex;
   align-items: center;
-  padding: 20px;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 30px 50px;
   -webkit-backdrop-filter: blur(2px);
           backdrop-filter: blur(2px);
-  position: fixed;
-  width: 97%;
   z-index: 4;
-  top: 0px;
 }
 header .menu-list {
   padding: 0px;
@@ -46,10 +48,11 @@ header .menu-list {
 }
 header .menu-list li {
   list-style: none;
-  margin: 0 20px;
+  margin-right: 40px;
   cursor: pointer;
   transition: all 0.2s;
   position: relative;
+  color: white;
 }
 header .menu-list li a {
   color: white;
@@ -71,7 +74,6 @@ header .menu-list li:hover::after {
   transform: scaleX(1);
 }
 header #cart {
-  margin-left: auto;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
@@ -94,40 +96,46 @@ header #cart .productsNum {
   margin-left: 10px;
 }
 
-#products {
+.itemListContainer {
   background-color: #181818;
   padding-top: 50px;
   display: flex;
+  min-height: 110vh;
+  flex-direction: column;
 }
-#products .itemList {
+.itemListContainer .itemList {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  width: 100vw;
 }
-#products .itemList a {
+.itemListContainer .itemList a {
   text-decoration: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 50px;
 }
-#products .itemList .itemContainer {
+.itemListContainer .itemList .itemContainer {
   display: flex;
   align-items: center;
   position: relative;
-  margin: 50px;
 }
-#products .itemList .itemContainer .card-onHover::before {
+.itemListContainer .itemList .itemContainer .card-onHover::before {
   -webkit-clip-path: circle(400px at 80% -20%) !important;
           clip-path: circle(400px at 80% -20%) !important;
 }
-#products .itemList .itemContainer .card-onHover .imgBx {
+.itemListContainer .itemList .itemContainer .card-onHover .imgBx {
   margin-left: 20%;
   transform: translateY(0%) translateX(40%) scale(0.9) !important;
 }
-#products .itemList .itemContainer .card-onHover .contentBx {
+.itemListContainer .itemList .itemContainer .card-onHover .contentBx {
   opacity: 100% !important;
 }
-#products .itemList .itemContainer .card-onHover .itemCount {
+.itemListContainer .itemList .itemContainer .card-onHover .itemCount {
   display: flex !important;
 }
-#products .itemList .itemContainer .card {
+.itemListContainer .itemList .itemContainer .card {
   transition: all 0.5s ease;
   position: relative;
   width: 320px;
@@ -135,10 +143,10 @@ header #cart .productsNum {
   background-color: rgba(148, 148, 148, 0.3294117647);
   border-radius: 20px;
 }
-#products .itemList .itemContainer .card:hover {
+.itemListContainer .itemList .itemContainer .card:hover {
   transform: translateY(-10px);
 }
-#products .itemList .itemContainer .card::before {
+.itemListContainer .itemList .itemContainer .card::before {
   z-index: 1;
   content: "";
   position: absolute;
@@ -152,7 +160,7 @@ header #cart .productsNum {
   border-radius: 20px;
   transition: all 0.5s ease-in-out;
 }
-#products .itemList .itemContainer .card .imgBx {
+.itemListContainer .itemList .itemContainer .card .imgBx {
   pointer-events: none;
   position: absolute;
   top: 50%;
@@ -162,14 +170,14 @@ header #cart .productsNum {
   height: 220px;
   transition: all 0.5s ease;
 }
-#products .itemList .itemContainer .card .imgBx img {
+.itemListContainer .itemList .itemContainer .card .imgBx img {
   max-height: 300px;
   position: relative;
   left: -40px;
   max-width: 250px;
   filter: drop-shadow(30px 20px 10px rgba(33, 33, 33, 0.315));
 }
-#products .itemList .itemContainer .card .contentBx {
+.itemListContainer .itemList .itemContainer .card .contentBx {
   pointer-events: none;
   transition: all 0.5s ease;
   z-index: 3;
@@ -180,14 +188,14 @@ header #cart .productsNum {
   opacity: 0%;
   top: 10px;
 }
-#products .itemList .itemContainer .card .contentBx h2 {
+.itemListContainer .itemList .itemContainer .card .contentBx h2 {
   font-size: 30px;
 }
-#products .itemList .itemContainer .card .contentBx .price {
+.itemListContainer .itemList .itemContainer .card .contentBx .price {
   margin-top: 10px;
   font-weight: bold;
 }
-#products .itemList .itemContainer .card .itemCount {
+.itemListContainer .itemList .itemContainer .card .itemCount {
   display: none;
   position: absolute;
   bottom: 7%;
@@ -500,4 +508,152 @@ header #cart .productsNum {
 }
 .featuredProducts .img .img3 {
   right: 100px;
+}
+
+.itemDetailContainer {
+  background-color: #181818;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.itemDetailContainer svg {
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  border-bottom: 1px white solid;
+}
+.itemDetailContainer .detailBox {
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  margin-top: 50px;
+  padding: 40px;
+  background-color: #0e0e0e;
+  display: flex;
+}
+.itemDetailContainer .detailBox .image {
+  margin-right: 60px;
+}
+.itemDetailContainer .detailBox .image img {
+  max-height: 500px;
+  max-width: 500px;
+}
+.itemDetailContainer .detailBox .info {
+  color: white;
+}
+.itemDetailContainer .detailBox .info h2 {
+  font-size: 40px;
+  line-height: 50px;
+}
+.itemDetailContainer .detailBox .info h6 {
+  font-size: 15px;
+  width: 300px;
+}
+.itemDetailContainer .detailBox .info .price {
+  margin-top: 7px;
+}
+.itemDetailContainer .detailBox:hover .coffee-decoration .coffee0 {
+  transform: translateX(-20px) rotate(45deg);
+}
+.itemDetailContainer .detailBox:hover .coffee-decoration .coffee1 {
+  transform: translateX(20px);
+}
+.itemDetailContainer .detailBox:hover .coffee-decoration .coffee2 {
+  transform: translateX(-10px);
+}
+.itemDetailContainer .detailBox:hover .coffee-decoration .coffee3 {
+  transform: translateX(10px);
+}
+.itemDetailContainer .detailBox:hover .coffee-decoration .coffee4 {
+  transform: translateX(-10px);
+}
+.itemDetailContainer .coffee-decoration img {
+  transition: all ease 0.5s;
+  position: absolute;
+  z-index: 2;
+}
+.itemDetailContainer .coffee-decoration .coffee0 {
+  width: 100px;
+  transform: rotate(45deg);
+  left: -5%;
+  bottom: 5%;
+}
+.itemDetailContainer .coffee-decoration .coffee1 {
+  left: -15%;
+  top: 30%;
+  width: 150px;
+}
+.itemDetailContainer .coffee-decoration .coffee2 {
+  right: -10%;
+  bottom: 10%;
+  width: 150px;
+}
+.itemDetailContainer .coffee-decoration .coffee3 {
+  top: 30%;
+  right: -5%;
+  width: 150px;
+}
+.itemDetailContainer .coffee-decoration .coffee4 {
+  width: 200px;
+  bottom: -20%;
+  right: 0%;
+  margin-right: 10px;
+}
+
+.categoryFilter {
+  padding: 50px 50px 0 100px;
+}
+.categoryFilter .search {
+  display: flex;
+}
+.categoryFilter .search input {
+  width: 350px;
+  height: 40px;
+  background: none;
+  color: white;
+  border: none;
+  border-bottom: 2px white solid;
+  margin-right: 30px;
+  outline: none;
+}
+.categoryFilter .search button {
+  width: 100px;
+  border-radius: 2px;
+  border: none;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  color: #181818;
+}
+.categoryFilter .search button:hover {
+  background: none;
+  color: white;
+  border: white 1px solid;
+}
+.categoryFilter .filter {
+  padding: 20px 0;
+}
+.categoryFilter .filter button {
+  margin-right: 10px;
+  min-width: 60px;
+  width: auto;
+  padding: 10px 10px;
+  background: none;
+  border: 1px white solid;
+  color: white;
+  border-radius: 30px;
+  transition: all 0.1s ease;
+  cursor: pointer;
+}
+.categoryFilter .filter button svg {
+  display: none;
+}
+.categoryFilter .filter button:hover {
+  background-color: white;
+  color: #181818;
+}
+.categoryFilter .filter .clicked {
+  background-color: white;
+  color: #181818;
 }/*# sourceMappingURL=style.css.map */

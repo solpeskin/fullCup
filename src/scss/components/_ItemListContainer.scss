@@ -1,22 +1,26 @@
-#products {
+.itemListContainer {
     background-color: #181818;
     padding-top: 50px;
     display: flex;
+    min-height: 110vh;
+    flex-direction: column;
 
     .itemList {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        width: 100vw;
 
         a {
             text-decoration: none;
+            width: fit-content;
+            margin: 50px;
         }
 
         .itemContainer {
             display: flex;
             align-items: center;
             position: relative;
-            margin: 50px;
 
             .card-onHover {                
                 &::before{

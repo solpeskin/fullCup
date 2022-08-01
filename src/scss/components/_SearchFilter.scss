@@ -1,0 +1,65 @@
+.categoryFilter {
+    padding: 50px 50px 0 100px;
+
+    .search {
+        display: flex;
+
+        input{
+            width: 350px;
+            height: 40px;
+            background:none;
+            color: white;
+            border: none;
+            border-bottom: 2px white solid;
+            margin-right: 30px;
+            outline: none;
+        }
+
+        button{
+            width: 100px;
+            border-radius: 2px;
+            border: none;
+            transition: all 0.5s ease;
+            cursor: pointer;
+            color: #181818;
+
+            &:hover {
+                background: none;
+                color: white;
+                border: white 1px solid;
+            }
+        }
+    }
+
+    .filter {
+        padding: 20px 0;
+
+        button {
+            margin-right: 10px;
+            min-width: 60px;
+            width: auto;
+            padding: 10px 10px;
+            background:none;
+            border: 1px white solid;
+            color: white;
+            border-radius: 30px;
+            transition: all 0.1s ease;
+            cursor: pointer;
+
+            svg {
+                display: none;
+            }
+
+            &:hover {
+                background-color: white;
+                color: #181818;
+    
+            }
+        }
+
+        .clicked {
+            background-color: white;
+            color: #181818;
+        }
+    }
+}
