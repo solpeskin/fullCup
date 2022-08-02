@@ -4,49 +4,39 @@ import ItemList from './ItemList'
 import LoadingSymbol from '../LoadingSymbol';
 import { useParams, Link } from 'react-router-dom';
 
-const ItemListContainer = () => {    
+const ItemListContainer = () => { 
+  const [allProducts, setAllProducsts] = useState([])
   const [productsArray, setProductsArray] = useState([])
-  const [loading, setLoading] = useState(true)
   const {category} = useParams()
-  const [productsCategory, setProductsCategory] = useState([])
-
+  
+  const [loading, setLoading] = useState(true)
   const loadingSymbol = <LoadingSymbol/>
 
   useEffect(()=>{
     fetch("../../JSON/DataList.json")
     .then((res)=>res.json())
-    .then((products)=>getProducts(products))
+    .then((products)=>setAllProducsts(products))
     .finally(()=> setLoading(false))
+    
+    console.log(allProducts)
 
+    getProducts()
     setClickedCategory()
   }, [category])
 
   // categoría
-  const getProducts = (arrayProducts) => {
-    if (category){
-      const productsFiltered = arrayProducts.filter((product)=>product.category == category)
+  const getProducts = () => {
+    let search = document.querySelector("#search-text").value.toLowerCase().trim()
+    const productsSearched = allProducts.filter((product)=>product.name.toLowerCase().includes(search.toLowerCase()))
 
+    if (category){
+      const productsFiltered = productsSearched.filter((product)=>product.category == category)
       setProductsArray(productsFiltered)
-      setProductsCategory(productsFiltered)
     }
 
     else {
-      setProductsCategory(arrayProducts)
-      setProductsArray(arrayProducts)
+      setProductsArray(productsSearched)
     }
-  }
-  
-  // buscador
-  const searchingTerm = ()=>{
-    let search = document.querySelector("#search-text").value.trim().toLowerCase()
-    
-    let searchResult = productsCategory.filter((product)=>{
-      if (product.name.toLowerCase().includes(search)){
-        return product
-      }
-    })
-    
-    setProductsArray(searchResult)
   }
   
   // botones de categoría (css)
@@ -68,7 +58,7 @@ const ItemListContainer = () => {
     <div className="products">
       <div className='categoryFilter'>
         <div className="search">
-          <input type="search" placeholder='Busca acá el nombre del producto...' id='search-text' onChange={searchingTerm}/>
+          <input type="search" placeholder='Busca acá el nombre del producto...' id='search-text' onChange={()=>getProducts()}/>
           <button >Buscar</button>
         </div>
         <div className="filter">
