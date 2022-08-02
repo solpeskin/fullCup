@@ -1,48 +1,32 @@
-# Fullcup -- proyecto final CoderHouse
-****
-## react JS
-****
+# Fullcup -- proyecto final CoderHouse React JS
 FullCupp es una página e-commerce. Es una tienda de elementos relacionados con el café, como tazas o café mismo.
 
-*** 
 ## Tabla de contenidos
-****
-1. [Información](#Información)
-2. [Demo gif](#Demo-gif)
-3. [Tecnologías](#Tecnologías)
-4. [Instalación](#Instalación)
+1. [Información](#información)
+2. [Demo video](#demo-video)
+3. [Tecnologías](#tecnologías)
+4. [Instalación](#instalación)
 
 
 ## Información
-****
 Proyecto final del curso React JS (comisión 34680) de CoderHouse
 
-***
-
-## Demo gif
-****
-Demostración de la navegación de la app (gif)
-![demo gif](https://ibb.co/ZgPFbp9)
-
-***
+## Demo video
+Demostración de la navegación de la app: [Link al video](https://youtu.be/rXBgbrKnjsQ)
 
 ## Tecnologías
-****
 Tecnologías utilizadas en el desarrollo del proyecto:
 * HTML5
 * CSS
 * JavaScript
 * React JS
-* [Toastify](https://www.npmjs.com/package/react-toastify) **_no fue utilizado aún_**
+* [Toastify](https://www.npmjs.com/package/react-toastify): **_no fue utilizado aún_**
 * [Bootstrap](https://getbootstrap.com/)
 * [GitHub](https://github.com/solpeskin/fullCup)
 * [Visual Studio Code](https://code.visualstudio.com/): Version 1.65 
 * [Node JS](https://nodejs.org/es/): Version 16.16.0
 
-***
-
-## Intalación 
-****
+## Instalación 
 Instalación React JS
 
 ```
