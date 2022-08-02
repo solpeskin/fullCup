@@ -1,35 +1,52 @@
-# Getting Started with Create React App
+# Fullcup -- proyecto final CoderHouse
+****
+## react JS
+****
+FullCupp es una página e-commerce. Es una tienda de elementos relacionados con el café, como tazas o café mismo.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+*** 
+## Tabla de contenidos
+****
+1. [Información](#Información)
+2. [Demo gif](#Demo-gif)
+3. [Tecnologías](#Tecnologías)
+4. [Instalación](#Instalación)
 
-## Available Scripts
 
-## Learn More
+## Información
+****
+Proyecto final del curso React JS (comisión 34680) de CoderHouse
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+***
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Demo gif
+****
+Demostración de la navegación de la app (gif)
+![demo gif](https://ibb.co/ZgPFbp9)
 
-### Code Splitting
+***
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Tecnologías
+****
+Tecnologías utilizadas en el desarrollo del proyecto:
+* HTML5
+* CSS
+* JavaScript
+* React JS
+* [Toastify](https://www.npmjs.com/package/react-toastify) **_no fue utilizado aún_**
+* [Bootstrap](https://getbootstrap.com/)
+* [GitHub](https://github.com/solpeskin/fullCup)
+* [Visual Studio Code](https://code.visualstudio.com/): Version 1.65 
+* [Node JS](https://nodejs.org/es/): Version 16.16.0
 
-### Analyzing the Bundle Size
+***
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Intalación 
+****
+Instalación React JS
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+$ npm install g create-react-app my-app
+$ cd my-app
+$ npm start
+```
