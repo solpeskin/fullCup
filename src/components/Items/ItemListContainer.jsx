@@ -8,7 +8,7 @@ const ItemListContainer = () => {
   const [productsArray, setProductsArray] = useState([])
   const [loading, setLoading] = useState(true)
   const {category} = useParams()
-  const [searching, setSearching] = useState("")
+  const [productsCategory, setProductsCategory] = useState([])
 
   const loadingSymbol = <LoadingSymbol/>
 
@@ -21,18 +21,35 @@ const ItemListContainer = () => {
     setClickedCategory()
   }, [category])
 
-  const getProducts = (arrayProducts)=>{
+  // categoría
+  const getProducts = (arrayProducts) => {
     if (category){
       const productsFiltered = arrayProducts.filter((product)=>product.category == category)
+
       setProductsArray(productsFiltered)
+      setProductsCategory(productsFiltered)
     }
 
     else {
+      setProductsCategory(arrayProducts)
       setProductsArray(arrayProducts)
     }
   }
   
-  // botones de categoría
+  // buscador
+  const searchingTerm = ()=>{
+    let search = document.querySelector("#search-text").value.trim().toLowerCase()
+    
+    let searchResult = productsCategory.filter((product)=>{
+      if (product.name.toLowerCase().includes(search)){
+        return product
+      }
+    })
+    
+    setProductsArray(searchResult)
+  }
+  
+  // botones de categoría (css)
   const setClickedCategory = ()=>{
     document.querySelectorAll("button").forEach((button)=>{
       button.classList.remove("clicked")
@@ -46,24 +63,6 @@ const ItemListContainer = () => {
       document.querySelector(".todo").classList.add("clicked")
     }
   }
-
-  // buscador 
-  const searchingTerm = (e)=>{
-    setSearching(e.target.value)
-    filter()
-  }
-
-  const filter = ()=>{
-    let searchResult = productsArray.filter((product)=>{
-      if (product.name.toLowerCase().indexOf(searching.toLowerCase()) != -1){
-        return product
-      }
-    })
-
-    // setProductsArray(searchResult)
-    console.log(searchResult)
-  }
-
 
   return (
     <div className="products">
