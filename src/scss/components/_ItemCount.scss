@@ -1,3 +1,13 @@
+@mixin hover-btn-effect  ($text-color , $bckg, $border) {
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: $bckg;
+        border: $border;
+        color: $text-color;
+    }
+}
+
 .itemCount {
     z-index: 3;
     display: flex;
@@ -8,10 +18,11 @@
         align-items: center;
         justify-content: space-between;
         width: 100px;
+        height: 40px;
         border: 1px solid white;
         color: white;
 
-        margin: 20px 0;
+        margin: 20px 0 10px 0;
 
         button {
             cursor: pointer;
@@ -33,14 +44,9 @@
         width: 130px;
         height: 40px;
         color: #474747;   
-        transition: all 0.3s ease;
         font-size: 12px;
-        
-        &:hover {
-            background:none;
-            border: white 1px solid;
-            color: white;
-        }
+
+        @include hover-btn-effect (white, none, 1px solid white)
     }
 
     .stockAvailable {
@@ -48,4 +54,22 @@
         margin-top: 5px;
         font-size: 10px;
     }
+}
+
+.bought-true {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 10px;
+
+    button {
+        width: 150px;
+        height: 42px;
+        background: none;
+        border: 1px white solid;
+        color: white;
+    
+        @include hover-btn-effect ($black, white, none)
+    }
+
 }

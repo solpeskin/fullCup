@@ -1,13 +1,35 @@
-import React from 'react'
+import React, {useState} from 'react'
 import ItemCount from './ItemCount'
 
 import coffe1 from '../../img/coffe2.png'
 import coffe2 from '../../img/coffe3.png'
 import coffe3 from '../../img/coffe4.png'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+
+import {toast} from 'react-toastify';
 
 const ItemDetail = ({item}) => {
   const granos = [coffe1, coffe2, coffe3, coffe1, coffe2]
+
+  const navigate = useNavigate()
+  const [amount, setAmount] = useState(0)
+  const [bought, setBought] = useState(false)
+
+  const onAdd = (amount)=> {
+    if (amount >= 1){
+      setBought(true)
+      toast(`${item.name} agregado al carrito!`,{
+        position: "top-center",
+        autoClose: 1500,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        toastId: "toast-item-count"
+      });
+    }
+  }
 
   return (
     <div className='itemDetail'>
@@ -23,9 +45,15 @@ const ItemDetail = ({item}) => {
         <div className="info">
           <h2>{item.name}</h2>
           <h6>{item.description}</h6>
-
           <p className='price'>{item.price}$</p>
-          <ItemCount stock={item.stock} initial={0}/>
+
+          {bought ? 
+            <div className="bought-true">
+              <button className='to-cart' onClick={()=>navigate("/cart")}>Ir al carrito</button>
+              <button className='keep' onClick={()=>navigate("/products")}>Seguir comprando</button>
+            </div> 
+          : <ItemCount stock={item.stock} amount={amount} setAmount={setAmount} onAdd={onAdd}/>}
+
         </div>
         <div className="coffee-decoration">
           {granos.map((img, index)=> <img src={img} alt="grano de café" key={index} className={"coffee"+index } />)}

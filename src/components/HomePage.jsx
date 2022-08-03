@@ -22,6 +22,7 @@ const HomePage = () => {
       document.removeEventListener('scroll', colorScroll)
       document.removeEventListener('mousemove', parallaxCoffee)
     }
+    
   },[])
 
   function coffeeScroll (){

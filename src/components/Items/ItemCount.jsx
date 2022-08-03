@@ -1,8 +1,4 @@
-import React, { useState } from 'react'
-
-const ItemCount = ({stock, initial}) => {
-    const [amount, setAmount] = useState(initial)
-
+const ItemCount = ({stock, amount, setAmount, onAdd}) => {
     const increaseAmount = ()=>{
         if (amount<stock){
             setAmount(amount + 1)
@@ -13,10 +9,6 @@ const ItemCount = ({stock, initial}) => {
         if (amount>0){
             setAmount(amount - 1)
         }
-    }
-
-    const onAdd = (amount)=>{
-        console.log(`agregaste ${amount} productos`)
     }
 
     return (

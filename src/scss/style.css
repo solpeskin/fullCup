@@ -101,6 +101,7 @@ header #cart .productsNum {
 }
 
 .products {
+  min-height: 100vh;
   background-color: #181818;
   padding-top: 50px;
 }
@@ -112,7 +113,7 @@ header #cart .productsNum {
 .products .itemList {
   margin-top: 30px;
   display: grid;
-  grid-template-columns: 300px 300px 300px 300px;
+  grid-template-columns: 20.5vw 20.5vw 20.5vw 20.5vw;
   gap: 50px;
 }
 .products .itemList a {
@@ -402,9 +403,10 @@ header #cart .productsNum {
   align-items: center;
   justify-content: space-between;
   width: 100px;
+  height: 40px;
   border: 1px solid white;
   color: white;
-  margin: 20px 0;
+  margin: 20px 0 10px 0;
 }
 .itemCount .selectAmount button {
   cursor: pointer;
@@ -423,18 +425,38 @@ header #cart .productsNum {
   width: 130px;
   height: 40px;
   color: #474747;
-  transition: all 0.3s ease;
   font-size: 12px;
+  transition: all 0.3s ease;
 }
 .itemCount .addButton:hover {
   background: none;
-  border: white 1px solid;
+  border: 1px solid white;
   color: white;
 }
 .itemCount .stockAvailable {
   color: white;
   margin-top: 5px;
   font-size: 10px;
+}
+
+.bought-true {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  gap: 10px;
+}
+.bought-true button {
+  width: 150px;
+  height: 42px;
+  background: none;
+  border: 1px white solid;
+  color: white;
+  transition: all 0.3s ease;
+}
+.bought-true button:hover {
+  background: white;
+  border: none;
+  color: #181818;
 }
 
 .featuredProducts {
@@ -654,4 +676,14 @@ header #cart .productsNum {
 .categoryFilter .filter .clicked {
   background-color: white;
   color: #181818;
+}
+
+#toast-item-count {
+  background-color: black !important;
+  color: white;
+  width: 350px;
+  font-size: 15px;
+}
+#toast-item-count button {
+  color: white;
 }/*# sourceMappingURL=style.css.map */

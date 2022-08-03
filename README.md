@@ -20,7 +20,7 @@ Tecnologías utilizadas en el desarrollo del proyecto:
 * CSS
 * JavaScript
 * React JS
-* [Toastify](https://www.npmjs.com/package/react-toastify): **_no fue utilizado aún_**
+* [Toastify](https://www.npmjs.com/package/react-toastify)
 * [Bootstrap](https://getbootstrap.com/)
 * [GitHub](https://github.com/solpeskin/fullCup)
 * [Visual Studio Code](https://code.visualstudio.com/): Version 1.65 

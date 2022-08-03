@@ -9,9 +9,15 @@ import ItemListContainer from './components/Items/ItemListContainer';
 
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 
+import { ToastContainer, Slide} from 'react-toastify';
+// https://fkhadra.github.io/react-toastify/introduction
+import 'react-toastify/dist/ReactToastify.css';
+
 function App() {
   return (
     <div className="App">
+      <ToastContainer transition={Slide} />
+
       <BrowserRouter>
         <NavBar/>
         <Routes>
