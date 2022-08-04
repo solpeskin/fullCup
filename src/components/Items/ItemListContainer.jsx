@@ -26,7 +26,7 @@ const ItemListContainer = () => {
   // categoría
   const getProducts = () => {
     let search = document.querySelector("#search-text").value.toLowerCase().trim()
-    const productsSearched = allProducts.filter((product)=>product.name.toLowerCase().includes(search.toLowerCase()))
+    const productsSearched = allProducts.filter((product)=>product.name.toLowerCase().includes(search));
 
     if (category){
       const productsFiltered = productsSearched.filter((product)=>product.category === category)

@@ -17,7 +17,7 @@ import {CartContext } from './context/cartContext';
 function App() {
   return (
     <div className="App">
-      <ToastContainer transition={Slide} />
+      <ToastContainer  />
 
       <BrowserRouter>
         <NavBar/>
