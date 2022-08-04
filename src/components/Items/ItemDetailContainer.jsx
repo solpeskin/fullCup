@@ -15,8 +15,9 @@ const ItemDetailContainer = () => {
     const getProductFetch = (id)=>{
       fetch("../../JSON/DataList.json")
       .then((res)=>res.json())
-      .then((products)=> setItem(products.filter((product)=>product.id == id)))
+      .then((products)=>setItem(products.filter((product)=>product.id === id)))
       .finally(()=> setLoading(false))
+      
     }
 
     useEffect(() => {

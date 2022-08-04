@@ -1,8 +1,8 @@
 import React, { useEffect, useState }  from 'react'
-import ItemList from './ItemList'
+import ItemList from "./ItemList"
 
-import LoadingSymbol from '../LoadingSymbol';
-import { useParams, Link } from 'react-router-dom';
+import LoadingSymbol from "../LoadingSymbol";
+import { useParams, Link } from "react-router-dom";
 
 const ItemListContainer = () => { 
   const [allProducts, setAllProducsts] = useState([])
@@ -11,24 +11,25 @@ const ItemListContainer = () => {
   
   const [loading, setLoading] = useState(true)
   const loadingSymbol = <LoadingSymbol/>
-
+  
   useEffect(()=>{
     fetch("../../JSON/DataList.json")
     .then((res)=>res.json())
     .then((products)=>setAllProducsts(products))
     .finally(()=> setLoading(false))
 
-    getProducts()
-    setClickedCategory()
+    getProducts();
+    setClickedCategory();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [allProducts])
-
+  
   // categoría
   const getProducts = () => {
     let search = document.querySelector("#search-text").value.toLowerCase().trim()
     const productsSearched = allProducts.filter((product)=>product.name.toLowerCase().includes(search.toLowerCase()))
 
     if (category){
-      const productsFiltered = productsSearched.filter((product)=>product.category == category)
+      const productsFiltered = productsSearched.filter((product)=>product.category === category)
       setProductsArray(productsFiltered)
     }
 
@@ -38,7 +39,7 @@ const ItemListContainer = () => {
   }
   
   // botones de categoría (css)
-  const setClickedCategory = ()=>{
+  const setClickedCategory = () => {
     document.querySelectorAll("button").forEach((button)=>{
       button.classList.remove("clicked")
     })
@@ -56,7 +57,12 @@ const ItemListContainer = () => {
     <div className="products">
       <div className='categoryFilter'>
         <div className="search">
-          <input type="search" placeholder='Busca acá el nombre del producto...' id='search-text' onChange={()=>getProducts()}/>
+          <input 
+            type="search" 
+            placeholder='Busca acá el nombre del producto...' 
+            id='search-text' 
+            onChange={()=>getProducts()}
+          />
           <button >Buscar</button>
         </div>
         <div className="filter">

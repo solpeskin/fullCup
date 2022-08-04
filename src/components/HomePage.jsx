@@ -83,7 +83,7 @@ const HomePage = () => {
 
       <div id='introduction'>
         <h2>Nada más dulce, </h2>
-        <img className="coffeImg" src={cafeImg}/>
+        <img className="coffeImg" src={cafeImg} alt="imagen café"/>
         <h2 className='contorn-text'>que un café amargo </h2>
       </div>
 
