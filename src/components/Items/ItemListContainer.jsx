@@ -17,12 +17,10 @@ const ItemListContainer = () => {
     .then((res)=>res.json())
     .then((products)=>setAllProducsts(products))
     .finally(()=> setLoading(false))
-    
-    console.log(allProducts)
 
     getProducts()
     setClickedCategory()
-  }, [category])
+  }, [allProducts])
 
   // categoría
   const getProducts = () => {

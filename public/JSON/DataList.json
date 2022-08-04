@@ -2,7 +2,7 @@
     {
         "id": "01" ,
         "name": "Black cacao" ,
-        "description": "Rico café a base de hojas de te negro, canela y por supuesto cacao.",
+        "description": "Rico café a base de hojas de té negro, canela y por supuesto cacao.",
         "stock": "30", 
         "price":"1000", 
         "img":"/img/products/black-cacao-sin-fondo.png",
@@ -12,7 +12,7 @@
     {
         "id": "02" , 
         "name": "Black cacao XXL" , 
-        "description": "El mismo Black cacao de siempre pero el doble de tamaño para disfrutarlo el doble." , 
+        "description": "El mismo Black cacao de siempre, pero el doble de tamaño para disfrutarlo el doble." , 
         "stock": "15", 
         "price":"150", 
         "img":"/img/products/black-cacao-xxl-sin-fondo.png",
@@ -42,7 +42,7 @@
     {
         "id": "05" , 
         "name": "Taza FullCup" , 
-        "description": "Nada mejor que una taza de café pero FullCup." , 
+        "description": "Agregale un toque único a tus mañanas. Nada mejor que una taza FullCup." , 
         "stock": "54", 
         "price": "1000", 
         "img":"/img/products/cup-sin-fondo.png",

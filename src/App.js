@@ -1,17 +1,18 @@
 import React from 'react';
-
 import './scss/style.css';
+
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+import { ToastContainer, Slide} from 'react-toastify';
+// https://fkhadra.github.io/react-toastify/introduction
+import 'react-toastify/dist/ReactToastify.css';
 
 import NavBar from './components/NavBar/NavBar'
 import HomePage from './components/HomePage';
 import ItemDetailContainer from './components/Items/ItemDetailContainer';
 import ItemListContainer from './components/Items/ItemListContainer';
+import Cart from './components/Cart';
 
-import {BrowserRouter, Routes, Route} from "react-router-dom";
-
-import { ToastContainer, Slide} from 'react-toastify';
-// https://fkhadra.github.io/react-toastify/introduction
-import 'react-toastify/dist/ReactToastify.css';
+import {CartContext } from './context/cartContext';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route exact path='/products'  element={<ItemListContainer/>}/>
           <Route exact path='/products/:category'  element={<ItemListContainer/>}/>
           <Route exact path="/item/:id" element={<ItemDetailContainer />} />
+          <Route exact path="/cart" element={<Cart/>} />
         </Routes>
       </BrowserRouter>
 
