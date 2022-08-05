@@ -31,11 +31,21 @@
 
     {
         "id": "04" , 
-        "name": "Green cáspsula" , 
-        "description": "Capsula de un café delicioso a base de hojas (10 unidades)." , 
+        "name": "Blue berries Cáspsula" , 
+        "description": "Capsula de un café delicioso a base de berries, moras y menta (10 unidades)." , 
         "stock": "30", 
         "price":"800",  
-        "img":"/img/products/green-capsula-sin-fondo.png",
+        "img":"/img/products/blue-capsule.png",
+        "category": "cápsula"
+    },
+
+    {
+        "id": "06" , 
+        "name": "Dark coffee Cáspsula" , 
+        "description": "Capsula de un café amargo. Hecho en casa con el mejor café extraído en África (10 unidades)." , 
+        "stock": "25", 
+        "price":"800",  
+        "img":"/img/products/brown-capsule.png",
         "category": "cápsula"
     },
 

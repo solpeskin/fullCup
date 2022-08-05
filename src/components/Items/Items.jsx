@@ -10,19 +10,23 @@ const Items = ({product}) => {
 
   return (
     <div id={product.id} className="itemContainer" onMouseEnter={cardOnHover} onClick={()=> navigate(`/item/${product.id}`)}>
-      <div className='card' data-color={product.color} >
+      {/* <div className='card' data-color={product.color} >
+        <img src={product.img} alt={product.name} />
+      </div> */}
+
+      <div className="card">
         <div className='imgBx'>
           <img src={product.img} className="productImg" alt={product.name}/>
         </div>
-
+      
         <div className='contentBx'>
           <h2 className='title'> {product.name} </h2>
           <p className='description'>{product.description}</p>
         </div>
-          
       </div>
     </div>
   )
 }
+
 
 export default Items
