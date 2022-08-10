@@ -11,7 +11,7 @@ const NavBar = () => {
         <li>Nosotros</li>
       </ul>
       
-      <CardWidget productsNum="0"/>
+      <CardWidget/>
     </header>
   )
 }

@@ -1,33 +1,28 @@
 import React from 'react';
-import './scss/style.css';
-
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import { ToastContainer} from 'react-toastify';
-// https://fkhadra.github.io/react-toastify/introduction
-import 'react-toastify/dist/ReactToastify.css';
 
 import NavBar from './components/NavBar/NavBar'
 import HomePage from './components/HomePage';
 import ItemDetailContainer from './components/Items/ItemDetailContainer';
 import ItemListContainer from './components/Items/ItemListContainer';
-import Cart from './components/Cart';
+import Cart from './components/Cart/Cart';
 
-// import {CartContext } from './context/cartContext';
+import CartProvider from './context/CartContext';
 
 function App() {
   return (
     <div className="App">
-      <ToastContainer  />
-
       <BrowserRouter>
-        <NavBar/>
-        <Routes>
-          <Route exact path='/' element={<HomePage/>}/>
-          <Route exact path='/products'  element={<ItemListContainer/>}/>
-          <Route exact path='/products/:category'  element={<ItemListContainer/>}/>
-          <Route exact path="/item/:id" element={<ItemDetailContainer />} />
-          <Route exact path="/cart" element={<Cart/>} />
-        </Routes>
+        <CartProvider>
+          <NavBar/>
+          <Routes>
+            <Route exact path='/' element={<HomePage/>}/>
+              <Route exact path='/products' element={<ItemListContainer/>}/>
+              <Route exact path='/products/:category'  element={<ItemListContainer/>}/>
+              <Route exact path="/item/:id" element={<ItemDetailContainer />} />
+            <Route exact path="/cart" element={<Cart/>} />
+          </Routes>
+        </CartProvider>
       </BrowserRouter>
 
       {/* <Footer/> */}

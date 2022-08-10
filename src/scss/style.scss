@@ -16,7 +16,6 @@
   scroll-behavior: smooth;
 }
 
-
 @import "./components/variables";
 
 @import "./components/NavBar";
@@ -30,13 +29,4 @@
 @import "./components/ItemDetail";
 @import "./components/SearchFilter";
 @import "./components/Cart";
-
-@import "./components/toastify";
-
-
-
-
-
-
-
-
+@import "./components/SideCart";

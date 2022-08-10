@@ -5,8 +5,6 @@ import { useParams } from "react-router-dom";
 
 import LoadingSymbol from '../LoadingSymbol';
 
-
-
 const ItemDetailContainer = () => {
     const [item, setItem] = useState("")
     const { id } = useParams();
@@ -16,12 +14,11 @@ const ItemDetailContainer = () => {
       fetch("../../JSON/DataList.json")
       .then((res)=>res.json())
       .then((products)=>setItem(products.filter((product)=>product.id === id)))
-      .finally(()=> setLoading(false))
-      
+      .finally(()=> setLoading(false))  
     }
 
     useEffect(() => {
-        getProductFetch(id)
+      getProductFetch(id)
     }, [id]);
 
   return (

@@ -1,0 +1,147 @@
+$offCanvas-height: 40px;
+
+#offCanvas {  
+    transition: all 0.5s ease;
+
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+
+    height: calc(100vh - $offCanvas-height);
+    width: 500px;
+    background-color: white;
+    padding: $offCanvas-height 10px 0 10px ;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    z-index: 5;
+
+    svg {
+        top: 10px;
+        position: absolute;
+        fill: gray;
+        cursor: pointer;
+
+        &:hover {
+            fill: black;
+        }
+    }
+
+    .see-cart {
+        height: 80px;
+        width: 100%;
+        background-color: white;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+
+        position: absolute;
+        bottom: 0px;
+
+        button {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 90%;
+            height: 40px;
+            background-color: black;
+            border: black 1px solid;
+            color: white;
+    
+            &:hover {
+                background-color: white;
+                color: black;
+            }
+        }
+    }
+}
+
+.items-cart {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+
+    overflow-y: scroll;  
+
+    margin-top: 10px;
+    padding-bottom: 90px;
+    width: 100%;
+
+    .item-cart {
+        margin: 20px auto;
+        display: flex;
+        width: 90%;
+
+        img {
+            margin-right: 30px;
+            height: 100px;
+        }
+
+        .item-resume {
+
+            h4 {
+                font-size: 20px;
+                color: #333;
+                font-weight: 600;
+
+            }
+    
+            p {
+                color: rgba(0,0,0,.45);
+                font-weight: 400;
+                font-size: 14px;
+            }
+
+            button {
+                margin: 30px 20px 0 0;
+                background: none;
+                border: none;
+                cursor: pointer;
+                
+                a {
+                    text-decoration: none;
+                    color: black;
+                }
+            }
+        }
+
+        h3 {
+            align-self: center;
+            margin-left: auto;
+        }
+
+    }
+}
+
+#offCanvas-backdrop {
+    transition: all 0.5s ease;
+    
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.328);
+
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.hide-sideBar{
+    z-index: 0;
+    opacity: 0%;
+}
+
+.show-sideBar{
+    opacity: 100%;
+    z-index: 5;
+}
+
+.hide-sideBar ~ #offCanvas {
+    right: -560px;
+}
+
+.show-sideBar ~ #offCanvas {
+    right: 0px;
+}
