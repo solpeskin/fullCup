@@ -26,26 +26,23 @@ const CartProvider = ({children}) => { //children es los componentes dentro del 
             setCart([...cart, {...item, quant}])
         }
     }
-    
-    const removeFromCart = (item) =>{
-        const cartDraft = [...cart]
-        cartDraft.splice(isInCart(item), 1)
-
-        setCart(cartDraft)   
-    }
 
     const deleteItem = (item) => {
         const itemDeleted = cart.filter((itemCart)=> itemCart.id!== item.id)
         setCart(itemDeleted)
     }
 
+    const cartProducts = cart.reduce((previous, item)=>item.quant + previous, 0)
+    const totalPrice = cart.reduce((previous, item)=>item.price * item.quant + previous, 0)
+
     const valueContext = {
         cart,
+        totalPrice,
+        cartProducts,
         isInCart,
         cleanCart,
         addToCart,
-        removeFromCart,
-        deleteItem,
+        deleteItem
     }
 
     return (

@@ -1,5 +1,6 @@
 .cart {
     height: 100vh;
+    padding: 50px 0;
     background-color: $black;
     display: flex;
 
@@ -14,7 +15,6 @@
         background-color: rgb(55, 55, 55);
         width: 80vw;
 
-        max-height: 60vh;
         min-height: 200px;
 
         display: flex;
@@ -54,7 +54,6 @@
 
         .items-cart {
             height: 100%;
-            margin: 0;
             padding-bottom: 0px;
 
             a, h3, h4 , button {
@@ -69,11 +68,30 @@
         }
     }
 
-    .total-price {
-        text-align: end;
-        color: white;
-        font-weight: 400;
-        font-size: 40px;
+    .buttons {
         margin-top: 30px;
+        display: flex;
+        align-items: flex-start;
+
+        .total-price {
+            text-align: end;
+            color: white;
+            font-weight: 400;
+            font-size: 40px;
+            margin-left: auto;
+        }
+
+        button {
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: white;
+            margin-right: 20px;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
+
 }

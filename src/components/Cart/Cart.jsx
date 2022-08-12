@@ -5,14 +5,8 @@ import CartItem from './CartItem'
 import cafeIlustration from '../../img/no-items2.png'
 
 const Cart = () => {
-  const {cart} = useContext(CartContext)
-  const [finalPrice, setFinalPrice] = useState(0)
+  const {cart, totalPrice, cleanCart} = useContext(CartContext)
   const navigate = useNavigate()
-
-  useEffect(()=>{
-    const price = cart.reduce((previous, item)=>item.price * item.quant + previous, 0)
-    setFinalPrice(price)
-  }, [cart])
 
   if (cart.length === 0){
     return (
@@ -39,7 +33,11 @@ const Cart = () => {
           </div>
         </div>
 
-        <h3 className='total-price'>Total: {finalPrice}$</h3>
+        <div className='buttons'>
+          <button onClick={cleanCart}>Vaciar carrito</button>
+          <button onClick={()=>navigate('/products')}>Volver a productos</button>
+          <h3 className='total-price'>Total: {totalPrice}$</h3>
+        </div>
       </div>
     </div>
   )

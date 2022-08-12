@@ -77,27 +77,29 @@ header .menu-list li::after {
 header .menu-list li:hover::after {
   transform: scaleX(1);
 }
-header #cart {
+header #cartWidget {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   display: flex;
   transition: all 0.2s;
 }
-header #cart:hover {
+header #cartWidget:hover {
   transform: translateX(-10px);
 }
-header #cart svg {
+header #cartWidget svg {
   fill: white;
   cursor: pointer;
 }
-header #cart svg path {
+header #cartWidget svg path {
   pointer-events: none;
 }
-header #cart .productsNum {
-  color: white;
+header #cartWidget .productsNum {
+  font-size: 13px;
+  text-align: center;
   transition: all 0.2s;
-  margin-left: 10px;
+  color: white;
+  margin-left: 5px;
 }
 
 .products {
@@ -669,6 +671,7 @@ header #cart .productsNum {
 
 .cart {
   height: 100vh;
+  padding: 50px 0;
   background-color: #181818;
   display: flex;
   flex-direction: column;
@@ -680,7 +683,6 @@ header #cart .productsNum {
   margin-top: 15vh;
   background-color: rgb(55, 55, 55);
   width: 80vw;
-  max-height: 60vh;
   min-height: 200px;
   display: flex;
   justify-content: center;
@@ -715,7 +717,6 @@ header #cart .productsNum {
 }
 .cart .products-cart .items-cart {
   height: 100%;
-  margin: 0;
   padding-bottom: 0px;
 }
 .cart .products-cart .items-cart a, .cart .products-cart .items-cart h3, .cart .products-cart .items-cart h4, .cart .products-cart .items-cart button {
@@ -725,19 +726,34 @@ header #cart .productsNum {
   color: rgba(255, 255, 255, 0.515) !important;
   text-align: start;
 }
-.cart .total-price {
+.cart .buttons {
+  margin-top: 30px;
+  display: flex;
+  align-items: flex-start;
+}
+.cart .buttons .total-price {
   text-align: end;
   color: white;
   font-weight: 400;
   font-size: 40px;
-  margin-top: 30px;
+  margin-left: auto;
+}
+.cart .buttons button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: white;
+  margin-right: 20px;
+}
+.cart .buttons button:hover {
+  text-decoration: underline;
 }
 
 #offCanvas {
   transition: all 0.5s ease;
   display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: flex-end;
   height: calc(100vh - 40px);
   width: 500px;
   background-color: white;
@@ -784,7 +800,7 @@ header #cart .productsNum {
 .items-cart {
   display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: flex-end;
   overflow-y: scroll;
   margin-top: 10px;
   padding-bottom: 90px;
@@ -797,7 +813,11 @@ header #cart .productsNum {
 }
 .items-cart .item-cart img {
   margin-right: 30px;
-  height: 100px;
+  width: 65px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  align-self: center;
 }
 .items-cart .item-cart .item-resume h4 {
   font-size: 20px;
@@ -805,6 +825,7 @@ header #cart .productsNum {
   font-weight: 600;
 }
 .items-cart .item-cart .item-resume p {
+  margin-right: 5px;
   color: rgba(0, 0, 0, 0.45);
   font-weight: 400;
   font-size: 14px;

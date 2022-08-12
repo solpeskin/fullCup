@@ -1,8 +1,9 @@
 import React, { useState, useEffect }  from 'react'
-import ItemDetail from "./ItemDetail";
-
 import { useParams } from "react-router-dom";
 
+import {collection, getDocs, getFirestore, query, where} from 'firebase/firestore'
+
+import ItemDetail from "./ItemDetail";
 import LoadingSymbol from '../LoadingSymbol';
 
 const ItemDetailContainer = () => {
@@ -17,8 +18,23 @@ const ItemDetailContainer = () => {
       .finally(()=> setLoading(false))  
     }
 
+    const getProductFb = (id) =>{
+      const db = getFirestore()
+      const itemsCollectionQuery = query(collection(db, "products") , where("id" , "===", id))  
+
+      getDocs(collection(db, "products"))
+	      .then((snapshot) => {
+		      const data = snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()}))
+          const dataItem = data.filter((item)=> item.id === id)
+
+          setItem(dataItem)
+	      })
+        .finally(()=>setLoading(false))
+
+    }
+
     useEffect(() => {
-      getProductFetch(id)
+      getProductFb(id)
     }, [id]);
 
   return (

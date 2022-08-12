@@ -2,10 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import './scss/style.css';
 
+import { initializeApp } from "firebase/app";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAOb2qnHkr88hPK_GUzlxZ4fqwAqyttVNE",
+  authDomain: "fullcup-74ea5.firebaseapp.com",
+  projectId: "fullcup-74ea5",
+  storageBucket: "fullcup-74ea5.appspot.com",
+  messagingSenderId: "108073132056",
+  appId: "1:108073132056:web:7e7a6226083701bc89636d"
+};
+
+// eslint-disable-next-line 
+const app = initializeApp(firebaseConfig);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

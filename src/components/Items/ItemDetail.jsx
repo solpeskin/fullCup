@@ -4,7 +4,7 @@ import ItemCount from './ItemCount'
 import coffe1 from '../../img/coffe2.png'
 import coffe2 from '../../img/coffe3.png'
 import coffe3 from '../../img/coffe4.png'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import { CartContext } from '../../context/CartContext'
 import SideCart from '../Cart/SideCart'
@@ -12,17 +12,18 @@ import SideCart from '../Cart/SideCart'
 const ItemDetail = ({item}) => {
   const granos = [coffe1, coffe2, coffe3, coffe1, coffe2]
 
-  const [amount, setAmount] = useState(0)
   const {addToCart} = useContext(CartContext)
-
+  
   const [show, setShow] = useState("hide-sideBar");
   const handleClose = () => setShow("hide-sideBar");
   const handleShow = () => setShow("show-sideBar");
+  
+  const [amount, setAmount] = useState(0)
 
   const onAdd = (amount)=> {
     if (amount > 0){
-      handleShow()
       setAmount(0)
+      handleShow()
       addToCart(item, amount)
     }
   }

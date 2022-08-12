@@ -4,6 +4,8 @@ import ItemList from "./ItemList"
 import LoadingSymbol from "../LoadingSymbol";
 import { useParams, Link } from "react-router-dom";
 
+import {collection, getDocs, getFirestore} from 'firebase/firestore'
+
 const ItemListContainer = () => { 
   const [allProducts, setAllProducsts] = useState([])
   const [productsArray, setProductsArray] = useState([])
@@ -13,18 +15,25 @@ const ItemListContainer = () => {
   const loadingSymbol = <LoadingSymbol/>
   
   useEffect(()=>{
-    fetch("../../JSON/DataList.json")
-    .then((res)=>res.json())
-    .then((products)=>setAllProducsts(products))
-    .finally(()=> setLoading(false))
+    const db = getFirestore()
+    const itemsCollection = collection(db, "products")
 
-    getProducts();
+    getDocs(itemsCollection)
+      .then((snapshot) => {
+        const data = snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()}))
+        setAllProducsts(data)
+      })
+      .finally(()=> {setLoading(false)})
+    ;
+
+    getProductsFiltered();
     setClickedCategory();
+    
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [allProducts])
   
   // categoría
-  const getProducts = () => {
+  const getProductsFiltered = () => {
     let search = document.querySelector("#search-text").value.toLowerCase().trim()
     const productsSearched = allProducts.filter((product)=>product.name.toLowerCase().includes(search));
 
@@ -61,7 +70,7 @@ const ItemListContainer = () => {
             type="search" 
             placeholder='Busca acá el nombre del producto...' 
             id='search-text' 
-            onChange={()=>getProducts()}
+            onChange={()=>getProductsFiltered()}
           />
           <button >Buscar</button>
         </div>

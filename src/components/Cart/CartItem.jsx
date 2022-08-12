@@ -1,11 +1,15 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { CartContext } from '../../context/CartContext'
-// import ItemCount from '../Items/ItemCount'
 
 const CartItem = ({item, handleClose}) => {
   const {img, name, quant, price, id} = item
-  const {removeFromCart} = useContext(CartContext)
+  const {deleteItem} = useContext(CartContext)
+  const [priceQuant, setPriceQuant] = useState(price)
+
+  useEffect(()=>{
+    setPriceQuant(price * quant)
+  }, [quant, price])
 
   return (
     <div className='item-cart'>
@@ -13,15 +17,15 @@ const CartItem = ({item, handleClose}) => {
         <div className='item-resume'>
           <div className='content-item'>
               <h4>{name}</h4>
-              <p>Cantidad: {quant}</p>
+              <div style={{display: 'flex'}}>
+                <p>{price}$</p>
+                <p>Cantidad: {quant}</p>
+              </div>
           </div>
-          <button onClick={()=>removeFromCart(item)}>Eliminar</button>
-          {handleClose 
-          ? <button onClick={handleClose} ><Link to={`/item/${id}`}>Ver más</Link></button>
-          : <button><Link to={`/item/${id}`}>Ver más</Link></button>}
+          <button onClick={()=>deleteItem(item)}>Eliminar</button>
+          <button onClick={handleClose && handleClose } ><Link to={`/item/${id}`}>Ver más</Link></button>
         </div>
-        {/* {itemCount && <ItemCount stock={}/>} */}
-        <h3>{price}$</h3>
+        <h3>{priceQuant}$</h3>
     </div>
   )
 }
