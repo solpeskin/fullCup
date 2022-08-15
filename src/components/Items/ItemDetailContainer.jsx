@@ -1,45 +1,32 @@
 import React, { useState, useEffect }  from 'react'
 import { useParams } from "react-router-dom";
 
-import {collection, getDocs, getFirestore, query, where} from 'firebase/firestore'
+import {getDoc, getFirestore, doc} from 'firebase/firestore'
 
 import ItemDetail from "./ItemDetail";
 import LoadingSymbol from '../LoadingSymbol';
 
 const ItemDetailContainer = () => {
-    const [item, setItem] = useState("")
-    const { id } = useParams();
-    const [loading, setLoading] = useState(true)
+  const [item, setItem] = useState("")
+  const { id } = useParams();
+  const [loading, setLoading] = useState(true)
+  
+  useEffect(() => {
+    const db = getFirestore()
+    const itemsCollection = doc(db, "products", id)
     
-    const getProductFetch = (id)=>{
-      fetch("../../JSON/DataList.json")
-      .then((res)=>res.json())
-      .then((products)=>setItem(products.filter((product)=>product.id === id)))
-      .finally(()=> setLoading(false))  
-    }
-
-    const getProductFb = (id) =>{
-      const db = getFirestore()
-      const itemsCollectionQuery = query(collection(db, "products") , where("id" , "===", id))  
-
-      getDocs(collection(db, "products"))
-	      .then((snapshot) => {
-		      const data = snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()}))
-          const dataItem = data.filter((item)=> item.id === id)
-
-          setItem(dataItem)
-	      })
-        .finally(()=>setLoading(false))
-
-    }
-
-    useEffect(() => {
-      getProductFb(id)
-    }, [id]);
+    getDoc(itemsCollection)
+    .then((snapshot) => {
+      setItem({id: snapshot.id, ...snapshot.data()})
+    })
+    .catch((error)=>console.log(error))
+    .finally(()=>setLoading(false))
+  
+    }, []);
 
   return (
     <div className='itemDetailContainer'>
-      { loading ? <LoadingSymbol/> : <ItemDetail item={item[0]}/>}
+      { loading ? <LoadingSymbol/> : <ItemDetail item={item}/>}
     </div>
   )
 }

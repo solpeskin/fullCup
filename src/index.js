@@ -6,13 +6,22 @@ import './scss/style.css';
 
 import { initializeApp } from "firebase/app";
 
+// const firebaseConfig = {
+//   apiKey: "AIzaSyAOb2qnHkr88hPK_GUzlxZ4fqwAqyttVNE",
+//   authDomain: "fullcup-74ea5.firebaseapp.com",
+//   projectId: "fullcup-74ea5",
+//   storageBucket: "fullcup-74ea5.appspot.com",
+//   messagingSenderId: "108073132056",
+//   appId: "1:108073132056:web:7e7a6226083701bc89636d"
+// };
+
 const firebaseConfig = {
-  apiKey: "AIzaSyAOb2qnHkr88hPK_GUzlxZ4fqwAqyttVNE",
-  authDomain: "fullcup-74ea5.firebaseapp.com",
-  projectId: "fullcup-74ea5",
-  storageBucket: "fullcup-74ea5.appspot.com",
-  messagingSenderId: "108073132056",
-  appId: "1:108073132056:web:7e7a6226083701bc89636d"
+  apiKey: "AIzaSyAsCU50EsJH-87gUucmA1fBKO1cRenFB0w",
+  authDomain: "fullcup-e6747.firebaseapp.com",
+  projectId: "fullcup-e6747",
+  storageBucket: "fullcup-e6747.appspot.com",
+  messagingSenderId: "958167874068",
+  appId: "1:958167874068:web:00612b3956a99cd65e4501"
 };
 
 // eslint-disable-next-line 

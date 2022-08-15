@@ -10,7 +10,6 @@ const OffCanvas = ({show, handleClose}) => {
   const cartCSS = {
     justifyContent: 'center',
     textAlign: 'center',
-    justifyContent: 'center',
     alignItems: 'center',
     width: '50%',
     alignSelf: 'center',
