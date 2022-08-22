@@ -8,6 +8,7 @@
     align-items: center;
 
     overflow-y: scroll;
+    text-align: end;
 
     .products-cart {
         border-radius: 10px;
@@ -55,6 +56,7 @@
         .items-cart {
             height: 100%;
             padding-bottom: 0px;
+            text-align: start;
 
             a, h3, h4 , button {
                 color: white !important;
@@ -94,4 +96,21 @@
         }
     }
 
+    .endButton {
+        cursor: pointer;
+        height: 40px;
+        width: 200px;
+        background-color: white;
+        border: none;
+        border-radius: 2px;
+        transition: all ease 0.3s;
+        color: $black;
+
+
+        &:hover {
+            background: none;
+            border: 1px solid white;
+            color: white;
+        }
+    }
 }

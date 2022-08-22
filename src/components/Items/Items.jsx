@@ -2,6 +2,8 @@ import React from 'react'
 import {useNavigate } from 'react-router-dom'
 
 const Items = ({product}) => {
+  // console.log(product)
+
   const navigate = useNavigate()
 
   const cardOnHover = (e)=>{
@@ -11,6 +13,7 @@ const Items = ({product}) => {
   return (
     <div id={product.id} className="itemContainer" onMouseEnter={cardOnHover} onClick={()=> navigate(`/item/${product.id}`)}>
       <div className="card">
+        {!product.stock && <div className='no-stock'><div>Sin stock</div></div>}
         <div className='imgBx'>
           <img src={product.img} className="productImg" alt={product.name}/>
         </div>

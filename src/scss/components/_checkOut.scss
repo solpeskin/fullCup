@@ -1,0 +1,182 @@
+.checkOut {
+    padding: 0 30px;
+    overflow: hidden;
+    height: 100vh;
+
+    background-color: $black;
+    display: flex;
+
+    .form {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-left: 50px;
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        p {
+            color: white;
+        }
+
+        h3 {
+            color: white;
+            font-size: 50px;
+            font-weight: 400;
+        }
+
+        input, button {
+            transition: all ease 0.3s;
+            outline: none;
+            width: 500px;
+            height: 50px;
+            background: none;
+            border: solid 1px white;
+            
+            margin-bottom: 20px;
+            padding: 0 10px;
+
+            color: white;
+        }
+
+        textArea {
+            margin-bottom: 20px;
+
+            max-width: 500px;
+            min-width: 500px;
+
+            min-height: 100px;
+            max-height: 200px;
+            
+            background:none;
+            border: solid 1px white;
+            outline: none;
+
+            padding: 10px;
+            color: white;
+
+        }
+
+        .inputTel {
+            display: flex;
+            align-items: center;
+
+            p {
+                color: white;
+            }
+
+            input {
+                margin-left: 20px;
+                width: 50px !important;
+                text-align: center;
+            }
+        }
+
+        #buyer-send {
+            width: 522px;
+            background-color: white;
+            color: $black;
+            transition: all ease 0.3s;
+            cursor: pointer;
+
+            &:hover {
+                background: none;
+                color: white;
+            }
+        }
+
+    }
+
+    .itemsOnCart {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        height: 80vh;
+        width: 40%;
+        background-color: rgb(52, 52, 52);
+        
+        margin-left: auto;
+        padding: 20px;
+        border-radius: 20px 20px 0 0;
+
+        position:absolute;
+        bottom: 0;
+        right: 5%;
+
+        
+        .items-cart {
+            margin: 0px;
+            padding: 0 20px !important;
+
+            h3, h4, p, button, a {
+                color: white !important;
+            }
+        }
+
+        .precioFinal {
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            width: 100%;
+            margin-top: auto;
+
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+
+            border: white 1px solid;
+
+            p {
+                margin: 0 15px;
+            }
+        }
+    }
+
+    .finished {
+        z-index: 8;
+        position: absolute;
+        left: 0;
+
+        backdrop-filter: blur(5px);
+        background-color: rgba(0, 0, 0, 0.217);
+        width: 100vw;
+        height: 100vh;
+
+        div {
+            margin: 5% auto 0 auto;
+            padding: 50px;
+
+            text-align: center;
+
+            h2 {
+                font-family: signature, sans-serif;
+                line-height: 80px;
+                font-size: 40px;
+            }
+
+            h2, p {
+                color: white;
+            }
+
+            svg {
+                transition: all ease 0.3s;
+                fill: white;
+                margin-top: 300px;
+                cursor: pointer;
+
+                &:hover {
+                    opacity: 70%;
+                }
+            }
+
+            p {
+                margin-top: 100px;
+            }
+        }
+    }
+}

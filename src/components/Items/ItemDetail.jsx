@@ -12,17 +12,19 @@ import SideCart from '../Cart/SideCart'
 const ItemDetail = ({item}) => {
   const granos = [coffe1, coffe2, coffe3, coffe1, coffe2]
 
-  const {addToCart} = useContext(CartContext)
+  const {addToCart, cart} = useContext(CartContext)
   
   const [show, setShow] = useState("hide-sideBar");
   const handleClose = () => setShow("hide-sideBar");
   const handleShow = () => setShow("show-sideBar");
   
-  const [amount, setAmount] = useState(0)
+  const getItemQuant = cart.find((items)=> items.id === item.id)
+  const [amount, setAmount] = useState(getItemQuant ? getItemQuant.quant : 0)
+  
+  
 
   const onAdd = (amount)=> {
     if (amount > 0){
-      setAmount(0)
       handleShow()
       addToCart(item, amount)
     }
@@ -47,7 +49,9 @@ const ItemDetail = ({item}) => {
           <h6>{item.description}</h6>
           <p className='price'>{item.price}$</p>
 
-          <ItemCount stock={item.stock} amount={amount} setAmount={setAmount} onAdd={onAdd}/>
+          {item.stock 
+          ? <ItemCount stock={item.stock} amount={amount} setAmount={setAmount} onAdd={onAdd}/>
+          : <button className='no-stock'>Sin stock</button>}
 
         </div>
         <div className="coffee-decoration">

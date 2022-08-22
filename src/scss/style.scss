@@ -1,9 +1,3 @@
-// variables 
-@font-face {
-  font-family: cerlions ;
-  src: url("../font/Cerlions-Regular.otf");
-}
-
 @font-face {
   font-family: signature ;
   src: url("../font/Signature\ Moments.ttf");
@@ -20,13 +14,17 @@
 
 @import "./components/NavBar";
 @import "./components/ItemListContainer";
-
 @import "./components/HomePage";
 @import "./components/Introduction";
-@import "./components/loading";
 @import "./components/ItemCount";
 @import "./components/FeaturedProducts";
 @import "./components/ItemDetail";
 @import "./components/SearchFilter";
 @import "./components/Cart";
 @import "./components/SideCart";
+@import "./components/CheckOut";
+
+@import "./components/loading";
+@import "./components/LoadingSpin";
+@import "./components/toastify";
+

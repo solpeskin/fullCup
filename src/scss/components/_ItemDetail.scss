@@ -48,6 +48,16 @@
             .price {
                 margin-top: 7px;
             }
+
+            .no-stock {
+                background: none;
+                color: white;
+                border: 1px solid white;
+                height: 40px;
+
+                margin-top: 30px;
+                width: 200px;
+            }
         }
 
         &:hover {

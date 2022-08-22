@@ -38,6 +38,7 @@ const Cart = () => {
           <button onClick={()=>navigate('/products')}>Volver a productos</button>
           <h3 className='total-price'>Total: {totalPrice}$</h3>
         </div>
+        <button className='endButton' onClick={()=>navigate("/checkout")}>Finalizar compra</button>
       </div>
     </div>
   )

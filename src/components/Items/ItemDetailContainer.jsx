@@ -22,7 +22,7 @@ const ItemDetailContainer = () => {
     .catch((error)=>console.log(error))
     .finally(()=>setLoading(false))
   
-    }, []);
+    }, [id]);
 
   return (
     <div className='itemDetailContainer'>

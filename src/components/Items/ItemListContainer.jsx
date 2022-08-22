@@ -4,7 +4,7 @@ import ItemList from "./ItemList"
 import LoadingSymbol from "../LoadingSymbol";
 import { useParams, Link } from "react-router-dom";
 
-import {collection, getDocs, getFirestore, query, where} from 'firebase/firestore'
+import {collection, getDocs, getFirestore} from 'firebase/firestore'
 
 const ItemListContainer = () => { 
   const [allProducts, setAllProducsts] = useState([])
@@ -29,8 +29,8 @@ const ItemListContainer = () => {
     // const q = query(itemsCollection, where("category", "==", category))
     // getDocs(q)
 
-    // En vez de hacer una petición cada vez que cambie de categoría, preferí hacer una petición solo
-    // una vez, guardarla en una variable con todos los productos y hacer la filtración a esa variable.
+    // En vez de hacer una petición cada vez que cambie de categoría, preferí hacer una petición de todos los productos solo
+    // una vez, guardarla en una variable con todos los productos y hacerle la filtración a esa variable.
     // No desde firebase. Ya que así evito que tarde más la página en cargar.
 
     getProductsFiltered();
