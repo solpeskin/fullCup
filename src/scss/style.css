@@ -81,7 +81,7 @@ header #cartWidget {
   transition: all 0.2s;
 }
 header #cartWidget:hover {
-  transform: translateX(-10px);
+  transform: scale(1.1);
 }
 header #cartWidget svg {
   fill: white;
@@ -1140,6 +1140,7 @@ header #cartWidget .productsNum {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
+  min-width: 400px !important;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
