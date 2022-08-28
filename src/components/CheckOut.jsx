@@ -75,7 +75,7 @@ const CheckOut = () => {
     }
 
   return (
-    <div className='checkOut'>
+    <div className='checkOut' data-aos="fade-up" data-aos-anchor-placement="top-bottom">
         { loading && <div className="dot-spin"></div>}
         <div className="form">
             <h3>Contacto</h3>

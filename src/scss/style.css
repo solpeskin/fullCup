@@ -979,6 +979,33 @@ header #cartWidget .productsNum {
   margin-top: 100px;
 }
 
+.us {
+  overflow: hidden;
+  height: auto;
+  background-color: #181818;
+  color: white;
+  padding: 115px 100px;
+}
+.us h3 {
+  font-size: 50px;
+}
+.us p {
+  margin-top: 20px;
+  font-size: 20px;
+  width: 800px;
+}
+.us img {
+  width: 600px;
+  position: fixed;
+  bottom: -100px;
+  right: 6%;
+  transform: rotate(70deg);
+}
+
+.App {
+  background-color: #181818;
+}
+
 .cupLoader-bckg {
   z-index: 6;
   position: fixed;

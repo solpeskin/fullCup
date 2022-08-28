@@ -60,7 +60,7 @@ const HomePage = () => {
   }
 
   return (
-    <section className='home'>
+    <section className='home' >
 
       <div id='homePage'>
         <img className='background' src={background} alt="granos de café"/>
@@ -70,7 +70,7 @@ const HomePage = () => {
         </div>
 
         <div className='cafeImages'>
-          <img src={coffe1} className="coffe1" data-value="-2" alt='grano de café'/>
+          <img src={coffe1} className="coffe1" data-value="-2" alt='grano de café' />
           <img src={coffe2} className="coffe2" data-value="6" alt='grano de café'/>
           <img src={coffe3} className="coffe3" data-value="-6" alt='grano de café'/>
           <img src={coffe4} className="coffe4" data-value="8" alt='grano de café'/>

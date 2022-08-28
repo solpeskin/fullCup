@@ -10,7 +10,7 @@ const Cart = () => {
 
   if (cart.length === 0){
     return (
-      <div className='cart'>
+      <div className='cart' data-aos="zoom-out-up">
         <div className="content">
           <div className="products-cart">
             <div className="empty-cart">
@@ -25,7 +25,7 @@ const Cart = () => {
   }
 
   return (
-    <div className='cart'>
+    <div className='cart' data-aos="zoom-out-up">
       <div className="content">
         <div className="products-cart">
           <div className="items-cart">

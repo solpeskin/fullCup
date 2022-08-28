@@ -5,7 +5,7 @@ import img1 from '../img/black-cacao-sin-fondo.png'
 
 const FeaturedProducts = () => {
   return (
-    <div className='featuredProducts'>
+    <div className='featuredProducts' data-aos="zoom-in-down">
         <div className="text">
             <h4>¡Hey, tú!</h4>
             <h5>Sé el café de nuestras mañanas</h5>

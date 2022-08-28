@@ -1,0 +1,29 @@
+.us {
+    overflow: hidden;
+    height: auto;
+    background-color: $black;
+    color: white;
+    padding: 115px 100px ;
+
+    h3 {
+        font-size: 50px;
+    }
+
+    p {
+        margin-top: 20px;
+        font-size: 20px;
+        width: 800px;
+    }
+
+    img {
+        width: 600px;
+        position: fixed;
+        bottom: -100px;
+        right: 6%;
+        transform: rotate(70deg) ;
+    }
+}
+
+.App {
+    background-color: $black;
+}

@@ -11,7 +11,7 @@ const Items = ({product}) => {
   }
 
   return (
-    <div id={product.id} className="itemContainer" onMouseEnter={cardOnHover} onClick={()=> navigate(`/item/${product.id}`)}>
+    <div id={product.id} className="itemContainer" onMouseEnter={cardOnHover} onClick={()=> navigate(`/item/${product.id}`)} data-aos="zoom-in-up">
       <div className="card">
         {!product.stock && <div className='no-stock'><div>Sin stock</div></div>}
         <div className='imgBx'>
