@@ -2,8 +2,6 @@ import React from 'react'
 import {useNavigate } from 'react-router-dom'
 
 const Items = ({product}) => {
-  // console.log(product)
-
   const navigate = useNavigate()
 
   const cardOnHover = (e)=>{

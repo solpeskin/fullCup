@@ -20,8 +20,6 @@ const ItemDetail = ({item}) => {
   
   const getItemQuant = cart.find((items)=> items.id === item.id)
   const [amount, setAmount] = useState(getItemQuant ? getItemQuant.quant : 0)
-  
-  
 
   const onAdd = (amount)=> {
     if (amount > 0){

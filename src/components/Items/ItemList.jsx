@@ -1,4 +1,3 @@
-// recibe los productos 
 import React from 'react'
 import Items from './Items'
 

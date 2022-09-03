@@ -7,8 +7,6 @@ import coffe5 from '../img/coffe5.png'
 import background from '../img/cafe.png'
 
 import cafeImg from '../img/cafe-top.png'
-
-// import  '../javascript/homepage.js'
 import FeaturedProducts from './FeaturedProducts'
 
 const HomePage = () => {  

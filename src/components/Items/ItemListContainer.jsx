@@ -39,7 +39,6 @@ const ItemListContainer = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [allProducts])
   
-  // categoría
   const getProductsFiltered = () => {
     let search = document.querySelector("#search-text").value.toLowerCase().trim()
     const productsSearched = allProducts.filter((product)=>product.name.toLowerCase().includes(search));
@@ -54,7 +53,6 @@ const ItemListContainer = () => {
     }
   }
   
-  // botones de categoría (css)
   const setClickedCategory = () => {
     document.querySelectorAll("button").forEach((button)=>{
       button.classList.remove("clicked")

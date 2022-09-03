@@ -6,8 +6,6 @@ const CardWidget = () => {
   const {cartProducts} = useContext(CartContext)
   const navigate = useNavigate()
 
-
-
   return (
     <div id="cartWidget" onClick={()=>navigate('/cart')}>
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"  viewBox="0 0 16 16">
