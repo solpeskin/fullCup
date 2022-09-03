@@ -12,7 +12,7 @@ FullCupp es una página e-commerce. Es una tienda de elementos relacionados con 
 Proyecto final del curso React JS (comisión 34680) de CoderHouse
 
 ## Demo video
-Demostración de la navegación de la app: [Link al video](https://youtu.be/rXBgbrKnjsQ)
+Demostración de la navegación de la app: [Link al video](https://youtu.be/KcRa_bnZX2E)
 
 ## Tecnologías
 Tecnologías utilizadas en el desarrollo del proyecto:
