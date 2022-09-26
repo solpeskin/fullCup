@@ -1,0 +1,61 @@
+[   
+    {
+        "id": "01" ,
+        "name": "Black cacao" ,
+        "description": "Rico café a base de hojas de té negro, canela y por supuesto cacao.",
+        "stock": "30", 
+        "price":"1000", 
+        "img":"/img/products/black-cacao-sin-fondo.png",
+        "category": "café-molido"
+    },
+
+    {
+        "id": "02" , 
+        "name": "Black cacao XXL" , 
+        "description": "El mismo Black cacao de siempre, pero el doble de tamaño para disfrutarlo el doble." , 
+        "stock": "15", 
+        "price":"1500", 
+        "img":"/img/products/black-cacao-xxl-sin-fondo.png",
+        "category": "café-molido"
+    },
+
+    {
+        "id": "03" , 
+        "name": "Clasic" , 
+        "description": "El café de siempre pero más rico." , 
+        "stock": "20", 
+        "price": "1000", 
+        "img":"/img/products/clasic-sin-fondo.png",
+        "category": "café-molido"
+    },
+
+    {
+        "id": "04" , 
+        "name": "Blue berries Cáspsula" , 
+        "description": "Capsula de un café delicioso a base de berries, moras y menta (10 unidades)." , 
+        "stock": "30", 
+        "price":"800",  
+        "img":"/img/products/blue-capsule.png",
+        "category": "cápsula"
+    },
+
+    {
+        "id": "06" , 
+        "name": "Dark coffee Cáspsula" , 
+        "description": "Capsula de un café amargo. Hecho en casa con el mejor café extraído en África (10 unidades)." , 
+        "stock": "25", 
+        "price":"800",  
+        "img":"/img/products/brown-capsule.png",
+        "category": "cápsula"
+    },
+
+    {
+        "id": "05" , 
+        "name": "Taza FullCup" , 
+        "description": "Agregale un toque único a tus mañanas. Nada mejor que una taza FullCup." , 
+        "stock": "54", 
+        "price": "1000", 
+        "img":"/img/products/cup-sin-fondo.png",
+        "category": "elementos"
+    }
+]

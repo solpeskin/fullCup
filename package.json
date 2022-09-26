@@ -1,5 +1,6 @@
 {
   "name": "gothics",
+  "homepage": "https://solpeskin.github.io/fullCup/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
