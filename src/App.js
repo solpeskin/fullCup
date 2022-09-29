@@ -18,7 +18,7 @@ import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter basename='fullCup'>
         <CartProvider>
           <ToastContainer hideProgressBar position="top-center" toastId="toast-item-count" autoClose={3000} newestOnTop/>
           <NavBar/>
