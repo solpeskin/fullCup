@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/fullCup/static/css/main.de804c54.css",
+    "main.js": "/fullCup/static/js/main.2b8fed06.js",
+    "static/js/787.352c649c.chunk.js": "/fullCup/static/js/787.352c649c.chunk.js",
+    "static/media/coffe2.png": "/fullCup/static/media/coffe2.42067080afbc5d0496be.png",
+    "static/media/salpicado.png": "/fullCup/static/media/salpicado.0eb3a56f58323d9d1546.png",
+    "static/media/coffe4.png": "/fullCup/static/media/coffe4.e723945afcfe7baf87c2.png",
+    "static/media/coffe3.png": "/fullCup/static/media/coffe3.b2bd6c48a1a4089d7b55.png",
+    "static/media/coffe1.png": "/fullCup/static/media/coffe1.c05e9c1d9c7dbeedc11a.png",
+    "static/media/black-cacao-sin-fondo.png": "/fullCup/static/media/black-cacao-sin-fondo.9ddf851e169207875f8d.png",
+    "static/media/coffe5.png": "/fullCup/static/media/coffe5.486a86615a74b357adc2.png",
+    "static/media/cafe-top.png": "/fullCup/static/media/cafe-top.d4d97ff1d03bbe65851a.png",
+    "static/media/cafe.png": "/fullCup/static/media/cafe.7a9af53bb573907609ef.png",
+    "static/media/Signature Moments.ttf": "/fullCup/static/media/Signature Moments.51cfe6299787cef1732f.ttf",
+    "static/media/no-items2.png": "/fullCup/static/media/no-items2.65f421b74a9d4c551384.png",
+    "index.html": "/fullCup/index.html",
+    "main.de804c54.css.map": "/fullCup/static/css/main.de804c54.css.map",
+    "main.2b8fed06.js.map": "/fullCup/static/js/main.2b8fed06.js.map",
+    "787.352c649c.chunk.js.map": "/fullCup/static/js/787.352c649c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.de804c54.css",
+    "static/js/main.2b8fed06.js"
+  ]
+}
